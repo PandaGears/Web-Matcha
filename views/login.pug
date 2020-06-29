@@ -1,0 +1,53 @@
+doctype html
+html
+	head
+		include global_stylesheets
+		link(rel='stylesheet', href='/login.css')
+		link(rel='stylesheet', href='/sweetalert2.css')
+		
+	body.recommendback
+		include navbar.pug
+
+		.container.mx-auto
+			h1.text-center.mt-white.mt-5.display-3 Welcome!
+			.row
+				.col
+					.card.my-5.mx-auto(style='max-width:500px')
+						.card-body
+							block content
+								h1 Login
+								hr
+								form#login.needs-validation(name="login", action='', method='POST' novalidate)
+									.form-group
+										label(for='userName') Username:
+										input#userLogin.form-control(type='text' placeholder='Enter Username' name='userLogin' required autofocus)
+
+									.form-group
+										label(for='password') Password:
+										input#userPass.form-control(type='password' placeholder='Enter Password' name='userPass' required)
+									
+									p
+										| Not from around these parts?
+										br
+										a(href='/user/register') Register Here
+									p
+										| Forgot your own password? (nobody judging here)
+										br
+										a(href='/user/pass_reset') Reset Password Here
+
+									button#submit.btn.btn-success.btn-block.btn-lg.enableOnInput(type='button', value='Login', onclick='postLogin()', disabled='disabled') Login
+								
+		
+		include footer
+		include global_scripts
+
+		script(src="/login.js")
+		
+		if error === 'postRegistration'
+			script.
+				swal(
+					'Welcome!',
+					'Please confirm email and then login. :)',
+					'success'
+				)
+

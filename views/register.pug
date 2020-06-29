@@ -1,0 +1,87 @@
+doctype html
+html
+	head
+		include global_stylesheets
+		link(rel='stylesheet', href='/register.css')
+		link(rel='stylesheet', href='/sweetalert2.css')
+	body
+		include navbar.pug
+
+		.container.mx-auto
+			h1.text-center.mt-white.mt-5.display-3#heading One of Us, One of Us!
+			.row
+				.col
+					.card.my-5.mx-auto(style='max-width:500px')
+						.card-body
+							block content
+								h1 Fill deet... FILL EM
+								
+								small#HelpBlock.form-text.text-muted
+									| Fields marked with an asterisk are required.... What? "it's everything?" take a hint
+								hr
+								form#register(name="register", action='', method='POST' novalidate)
+									.form-group
+										a.req * 
+										label(for='userName') Username:
+										input#userLogin.form-control(type='text' placeholder='Enter Username' name='userLogin' autofocus required)
+										small#usernameHelpBlock.form-text.text-muted
+											| All usernames will be forced to lower case.
+										p#userNameError.errorMsg
+
+									.form-group
+										.form-group
+											a.req * 
+											label(for='firstName') Name:
+											input#userName.form-control(type='text' placeholder='Enter Name' name='userName' required)
+											p#firstNameError.errorMsg
+
+										.form-group
+											a.req * 
+											label(for='lastName') Surname:
+											input#userSurname.form-control(type='text' placeholder='Enter Surname' name='userSurname' required)
+											p#lastNameError.errorMsg
+
+									.form-group
+										a.req * 
+										label(for='email') Email:
+										input#Email.form-control(type='email' placeholder='Enter Email' name='Email' required)
+										p#emailError.errorMsg
+
+									.form-group
+										.form-group
+											a.req * 
+											label(for='password') Password:
+											input#userPass.form-control(type='password' placeholder='Enter Password' name='userPass' required)
+											p#passError.errorMsg
+											small#passwordHelpBlock.form-text.text-muted
+												| Your password must be 12 characters long and contain only letters and numbers.
+
+										.form-group
+											a.req * 
+											label(for='confirmPassword') Confirm Password:
+											input#userConfPass.form-control(type='password' placeholder='Confirm Password' name='userConfPass' required)
+											p#confPassError.errorMsg
+
+									br
+									p.text-center
+										| Already one of us? WHY ARE YOU STILL HERE???
+										br 
+										br 
+										a.links(href='/user/login') CLICK HERE TO LOGIN PLEASE
+									br
+									button#submit.btn.btn-success.btn-block.btn-lg.enableOnInput(type='button', value='Register', onclick='registerPost()', disabled='disabled') Register
+								p#error.mt-3
+
+		include footer
+
+		include global_scripts
+		script(src="/register.js")
+		if error === 'invalidForm'
+			script.
+				swal(
+					'Error!',
+					'Registration form was invalid',
+					'error'
+				)
+
+			

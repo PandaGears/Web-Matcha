@@ -1,0 +1,218 @@
+doctype html
+html
+	head
+		include global_stylesheets
+		link(rel='stylesheet', href='/profile.css')
+	body
+		include navbar
+
+		.container
+			h1.mt-white.text-center.mt-5.display-3#heading Profile of #{username}
+			
+		.container.mx-auto.my-3(style='max-width: 900px;')
+			.card.mx-auto(style='max-width: 900px;')
+				#carouselControls.carousel.slide(data-ride='carousel', data-interval="false")
+					.carousel-inner
+						.carousel-item.active(data-interval="false")
+							if imageExists
+								img.img-fluidd-block.w-100(src=userImage, alt='User Image')
+							else
+								img.img-fluidd-block.w-100(src='https://res.cloudinary.com/ddrrwygt1/image/upload/v1591020994/images_rxeryf.png', alt='No Image Available')
+						if imageArray
+							each value in imageArray
+								if value != userImage
+									.carousel-item(data-interval="false")
+										img.d-block.w-100(src=value, alt='User Image')
+					if !sameUser
+						a.carousel-control-prev(href='#carouselControls', role='button', data-slide='prev')
+							span.carousel-control-prev-icon(aria-hidden='true')
+							span.sr-only Previous
+						a.carousel-control-next(href='#carouselControls', role='button', data-slide='next')
+							span.carousel-control-next-icon(aria-hidden='true')
+							span.sr-only Next 
+	
+				.card-body
+					if !sameUser
+						if (!userIsOnline)
+							small#lastOnline
+								p(style="text-align: center")
+									i.fa.mx-2.text-danger.fa-circle
+									| Last Seen: #{userLastOnline}
+
+						else
+							small#lastOnline
+								p(style="text-align: center")
+									i.fa.mx-2.text-success.fa-circle
+									| Online
+					hr
+					h1.display-4.text-center.card-title.text-capitalize #{FirstName} #{LastName}
+					if liked == 1
+						h5.card-subtitle.mb-2(style="text-align: center")
+							| This user has liked you!
+					if !sameUser
+						.row(style="margin-left: 32%;  text-align: center; overflow: hidden; padding: 1%;")
+							if user.liketracker == 0
+								button#BtnLike.btn.btn-success(value=username, disabled onclick='likeUser(this.value)')
+									i.fa.fa-heart.mr-2
+									| Like 
+							else
+								button#BtnLike.btn.btn-success(value=username, onclick='likeUser(this.value)')
+									i.fa.fa-heart.mr-2
+									| Like 
+							if user.liketracker == 2
+								button#BtnDislike.btn.btn-danger(disabled value=username, onclick='dislikeUser(this.value)')
+									i.fa.fa-thumbs-down.mr-2
+									| Dislike
+							else
+								button#BtnDislike.btn.btn-danger(value=username, onclick='dislikeUser(this.value)')
+									i.fa.fa-thumbs-down.mr-2
+									| Dislike 							
+						.row(style="margin-left: 32%; text-align: center; overflow: hidden; padding: 1%;")
+							button#BtnReport.btn.btn-info(value=username, onclick='reportUser(this.value)')
+								i.fa.fa-exclamation-triangle.mr-2
+								| Report 
+							button#BtnBlock.btn.btn-warning(value=username, onclick='blockUser(this.value)')
+								i.fa.fa-ban.mr-2
+								| Block 
+
+						hr
+						h4.card-subtitle.mb-2
+							p(style="text-align: center")
+								i.fa.mx-2.fa-birthday-cake
+								|  Age: #{userAge}
+						h4.card-subtitle.mb-2
+							p(style="text-align: center")
+								i.fa.mx-2.fa-thumbs-up.text-success
+								|  Likes: #{Likes}
+						h4.card-subtitle.mb-2
+							p(style="text-align: center")
+								i.fa.mx-2.fa-trophy.text-warning
+								| Fame Rating: #{userFame}
+					hr
+					
+					p.h4(style="text-align: center") I am a:
+						if userOrientation === 'hetero'
+							p(style="text-align: center")
+								| Heterosexual 
+								if userGender === 'NB'
+									| Non-Binary
+								else
+									|	#{userGender}
+						else if userOrientation === 'homo'
+							p(style="text-align: center")
+								| Homosexual 
+								if userGender === 'NB'
+									| Non-Binary
+								else
+									|	#{userGender}
+						else if userOrientation === 'bi'
+							p(style="text-align: center")
+								| Bisexual 								
+								if userGender === 'NB'
+									| Non-Binary
+								else
+									|	#{userGender}
+						else if userOrientation === 'pan'
+							p(style="text-align: center")
+								| Pansexual 
+								if userGender === 'NB'
+									| Non-Binary
+								else
+									|	#{userGender}
+						else if userOrientation === 'ace'
+							p(style="text-align: center")
+								| Asexual 
+								if userGender === 'NB'
+									| Non-Binary
+								else
+									|	#{userGender}
+						else
+							p(style="text-align: center")
+								| Aromantic 
+								if userGender === 'NB'
+									| Non-Binary
+								else
+									|	#{userGender}
+
+					
+					p.h4(style="text-align: center")  Looking For:
+					if userOrientation === 'hetero'
+						if userGender === 'Male'
+							p(style="text-align: center")
+								i.fa.mx-2.fa-venus.red
+								|  Women 
+						else if userGender === 'Female'
+							p(style="text-align: center")
+								i.fa.mx-2.fa-mars.blue
+								|  Men
+						else
+							p(style="text-align: center")
+								i.fa.ml-1.fa-venus.red
+								i.fa.ml-1.fa-mars.blue
+								|  Women and Men
+					else if userOrientation === 'homo'
+						if userGender === 'Male'
+							p(style="text-align: center")
+								i.fa.mx-2.fa-mars.blue
+								|  Men
+						else if userGender === 'Female'
+							p(style="text-align: center")
+								i.fa.mx-2.fa-venus.red
+								|  Women
+						else
+								i.fa.mx-2.fa-genderless.purple
+								|  Enbies
+					else if (userOrientation === "bi" || userOrientation === "pan")
+						p(style="text-align: center")
+							i.fa.ml-1.fa-mars.blue
+							i.fa.ml-1.fa-venus.red
+							i.fa.ml-1.fa-genderless.purple
+							|  Anybody
+					else if (userOrientation === "ace")
+						p(style="text-align: center")
+							i.fa.ml-1.fa-mars.blue
+							i.fa.ml-1.fa-venus.red
+							i.fa.ml-1.fa-genderless.purple
+							|	Anybody, but not sexually
+					else if (userOrientation === "aro")
+						p(style="text-align: center")
+							i.fa.ml-1.fa-mars.blue
+							i.fa.ml-1.fa-venus.red
+							i.fa.ml-1.fa-genderless.purple
+							|	Anybody, but not romantically
+					
+					if(sameUser != 1)
+						p.h4(style="text-align: center")  Distance:
+						if distance === 9999
+							p(style="text-align: center") This user is everywhere and nowhere... Just kidding, their location wasn't set
+						else
+							p(style="text-align: center")
+								i.fa.mx-2.fa-map-marker.red
+								| #{distance}km
+
+					hr
+					if !sameUser
+					
+						h4.card-title(style="text-align: center") Interests
+						if userInterests === 0
+							p(style="text-align: center") This user currently has no Interests set!
+						else
+							each val in userInterests
+								span.badge.badge-primary(style="margin-left: 46%; font-size: 18px") #{val.interest}
+						hr
+
+					h4.card-title(style="text-align: center") Bio
+					if userBio === 0
+						p.card-text(style="text-align: center") This user currently has no Bio set!
+					else
+						p.card-text(style="text-align: center")
+							| #{userBio}
+
+					if sameUser == 1
+						hr
+						a#EditProfile.btn.btn-success.btn-block.btn-lg(href='/user/account') Edit Profile
+
+		include footer
+
+		include global_scripts
+		script(src="/profileActions.js")

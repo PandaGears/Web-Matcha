@@ -1,0 +1,137 @@
+body {
+    background-color: rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(to bottom, rgba(37, 67, 236, 0.52), rgba(187, 34, 179, 0.73)), url(https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010239/panda_ciu1mf.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 90px;
+    overflow-x: hidden;
+}
+
+.foot {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 56px;
+}
+
+.links {
+    color: red;
+    text-decoration: none;
+}
+
+.links:hover {
+    color: rgb(187, 0, 0);
+    text-decoration: none;
+}
+
+a.logreg {
+    color: white;
+    text-decoration: none;
+    font-size: 5vw;
+    text-align: center;
+}
+
+a.logreg:hover {
+    color: black;
+    text-decoration: none;
+}
+
+#notifys {
+    position: fixed;
+    bottom: 43px;
+    right: 20px;
+}
+
+.mbg-blue {
+    background-color: #1cb3c8;
+}
+
+.mbg-red {
+    background-color: #ff4949;
+}
+
+.mbg-dark-red {
+    background-color: #c10000;
+}
+
+.mbg-light-grey {
+    background-color: #dedede;
+}
+
+.mbg-grey {
+    background-color: #738598;
+}
+
+.mbg-white {
+    background-color: #eeeeee;
+}
+
+.mbg-purple {
+    background-color: #3c415e;
+}
+
+.mt-blue {
+    color: #1cb3c8;
+}
+
+.mt-red {
+    background-color: #ff4949;
+}
+
+.mt-dark-red {
+    background-color: #c10000;
+}
+
+.mt-light-grey {
+    background-color: #dedede;
+}
+
+.mt-grey {
+    color: #738598;
+}
+
+.mt-white {
+    color: #eeeeee;
+}
+
+.mt-purple {
+    color: #3c415e;
+}
+
+.blue {
+    color: blue;
+}
+
+.red {
+    color: red
+}
+
+.purple {
+    color: rgb(174, 0, 255);
+}
+
+@media screen and (max-width: 575.98px) {
+    #heading {
+        font-size: 2.5rem;
+    }
+    #notifys {
+        bottom: 43px;
+        right: 15px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 991.98px) {
+    #heading {
+        font-size: 3.5rem;
+    }
+}

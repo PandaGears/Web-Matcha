@@ -1,0 +1,65 @@
+doctype html
+html
+	head
+		include global_stylesheets
+		link(rel='stylesheet', href='/colours.css')
+	body
+		include navbar
+
+		.container.text-center
+			h1.mt-white.text-center.mt-5.display-2#heading Just a typical dating site, yup! Totally!
+			if !userLogged
+				br 
+				br
+				br
+				br
+				br
+				p
+					a.logreg(href="/user/login") Login           
+				p(style="cursor:context-menu; font-size: 3vw") or
+				p
+					a.logreg(href="/user/register") Join us
+
+		include footer
+
+		include global_scripts
+
+		if notification === 'valid'
+			script.
+				swal(
+					'Success!',
+					'Email confirmed, welcome to the club, Cub.',
+					'success'
+				)
+
+		if notification === 'changed'
+			script.
+				swal(
+					'Success!',
+					'Password changed. Please log in again',
+					'success'
+				)
+
+		if notification === 'invalid'
+			script.
+				swal(
+					'Invalid!',
+					'THIS IS A WRONG.',
+					'error'
+				)
+
+		if notification === 'emailed'
+			script.
+				swal(
+					'Success!',
+					'GO CHECK YER EMAILS.',
+					'success'
+				)
+
+		if notification === 'incomplete'
+			script.
+				swal(
+					'Incomplete',
+					'HOW DID YA GET HERE!? GO FINISH YER REGISTRATION',
+					'error'
+				)

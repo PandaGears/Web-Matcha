@@ -1,0 +1,38 @@
+{
+    "name": "matcha",
+    "version": "1.0.0",
+    "description": "Pandas",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/PandaGears/Nodey.git"
+    },
+    "author": "Tamara Radloff",
+    "license": "ISC",
+    "bugs": {},
+    "dependencies": {
+        "bcrypt": "^3.0.7",
+        "bluebird": "^3.7.2",
+        "body-parser": "^1.19.0",
+        "cloudinary": "^1.18.1",
+        "express": "^4.17.1",
+        "express-session": "^1.17.0",
+        "jade": "^1.11.0",
+        "multer": "^1.4.2",
+        "multer-storage-cloudinary": "^2.2.1",
+        "mysql": "^2.18.1",
+        "mysql-pool": "^0.2.2",
+        "nodemailer": "^6.4.2",
+        "nouislider": "^14.1.0",
+        "pug": "^2.0.4",
+        "socket.io": "^2.3.0",
+        "sweetalert2": "^9.4.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.3"
+    }
+}

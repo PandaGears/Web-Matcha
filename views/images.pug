@@ -1,0 +1,38 @@
+html
+	head
+		include global_stylesheets
+		link(rel='stylesheet', href='/images.css')
+	body
+		include navbar.pug
+		
+		h2.mt-white.text-center.mt-5.display-3#heading Edit Images
+		.container(style='max-width: 700px;')
+			.card
+				.col
+					h3.mx-auto.mt-2 Select an image to upload:
+					small.text-muted
+						| A maximum of 5 images are permitted.
+						| Set one as active for it to become your profile image.
+					.container.mx-auto.mb-5.mt-2.custom-file(style='max-width: 700px;')
+						form#account(name="images", action='/user/account/images', method='POST', enctype="multipart/form-data")
+							input#profileImg.custom-file-input(type="file", name='image', accept="image/*")
+							label.custom-file-label.mx-auto(for='profileImg') Choose File
+							button#submit.btn.btn-success.btn-block.mx-auto.my-2(type='submit') Upload
+					each value in imageArray
+						hr
+						.container.mx-auto.my-3(style='max-width: 700px;')
+							img.img-fluid.w-100.mx-auto(src=value, alt='User Image')
+							button.btn.btn-lg.btn-success.mt-2.mx-2(value=value, onclick='setActiveImage(this.value)') Set as Active
+							button.btn.btn-lg.btn-danger.mt-2.mx-2(value=value, onclick='deleteImage(this.value)')
+								i.fa.fa-trash
+				br
+
+		include footer
+
+		script(src="/images.js")
+		include global_scripts
+		script.
+			$(".custom-file-input").on("change", function() {
+			var fileName = $(this).val().split("\\").pop();
+			$(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+			});

@@ -1,0 +1,11 @@
+input[type=text], input[type=password], input[type=email] {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 8px 0;
+	color: black;
+	background: #edf0f2;
+}
+
+.errorMsg {
+	color: red;
+}
