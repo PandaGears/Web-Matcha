@@ -71,12 +71,12 @@ router.post('/login', (req, res, next) => {
     }
 });
 
-router.get('/register/:error?', (req, res, next) => {
+router.get('/registration/:error?', (req, res, next) => {
     if (req.session.user) {
         res.redirect('/');
         return;
     }
-    res.render('register', {
+    res.render('registration', {
         title: 'Register',
         error: req.params.error,
         user: (req.session.user === undefined ? "Username" : req.session.user),
@@ -84,7 +84,7 @@ router.get('/register/:error?', (req, res, next) => {
     });
 });
 
-router.post('/register', (req, res, next) => {
+router.post('/registration', (req, res, next) => {
     let db = new database;
     if (validation.registrationFormValid(req.body.userLogin, req.body.userName, req.body.userSurname, req.body.Email, req.body.userPass, req.body.userConfPass) != true) {} else {
         var registerAttempt = db.register(req.body.userLogin, req.body.userName, req.body.userSurname, req.body.Email, req.body.userPass, req.body.userConfPass);
@@ -213,7 +213,7 @@ router.get('/images', (req, res, next) => {
     })
 });
 
-router.get('/pass_reset/:code?', (req, res, next) => {
+router.get('/password_reset/:code?', (req, res, next) => {
     if (req.session.user !== undefined) {
         res.redirect('/');
         return;
@@ -230,7 +230,7 @@ router.get('/pass_reset/:code?', (req, res, next) => {
             res.redirect('/');
         })
     } else {
-        res.render('pass_reset', {
+        res.render('password_reset', {
             title: 'pass_reset',
             user: (req.session.user === undefined ? "Username" : req.session.user)
         });

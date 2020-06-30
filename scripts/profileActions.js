@@ -68,7 +68,7 @@ function likeUser(user) {
             } else if (data == 'blocked')
                 swal({
                     title: 'Error!',
-                    text: `This user has blocked you.`,
+                    text: `This user has blocked you... Awks`,
                     type: 'error'
                 }).then(function() {
                     window.location.reload();

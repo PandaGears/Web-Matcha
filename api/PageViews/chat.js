@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
     }
     let completeProfile = DB.verified(req.session.user);
     completeProfile.then(function(data) {
-        DB.query(`UPDATE messages SET isunread = 0 WHERE isunread = 1 AND receiver = '${req.session.user}'`);
+        DB.query(`UPDATE messages SET unread = 0 WHERE unread = 1 AND receiver = '${req.session.user}'`);
         let sql = "SELECT * FROM likes WHERE liked = ?"
         let inserts = [req.session.user];
         sql = mysql.format(sql, inserts);

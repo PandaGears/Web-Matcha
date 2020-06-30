@@ -62,7 +62,7 @@ function registerPost() {
     valid.then(function(ret) {
         $.ajax({
             type: "POST",
-            url: '/user/register',
+            url: '/user/registration',
             data: JSON.stringify(form),
             contentType: "application/json; charset=utf-8",
             dataType: "json",

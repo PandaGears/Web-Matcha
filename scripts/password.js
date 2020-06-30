@@ -49,9 +49,9 @@ function sendEmail() {
             dataType: "json",
             success: function(ret) {
                 swal(
-                    'STUFF HAPPENED, Go check your emails',
+                    'I did a process',
                     `${ret}`,
-                    'success'
+                    'info'
                 )
             }
         })

@@ -55,7 +55,7 @@ class Profile {
                 let checked = db.query(sql);
                 checked.then(function(data) {
                     if (!data[0]) {
-                        let sql = `INSERT into views (viewed, viewer, unread) VALUES (?, ?, 1)`
+                        let sql = `INSERT into views (viewed, viewer, isunread) VALUES (?, ?, 1)`
                         let inserts = [viewed, viewer];
                         sql = mysql.format(sql, inserts);
                         db.query(sql);
