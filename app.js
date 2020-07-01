@@ -2,14 +2,15 @@ const express = require('express');
 var session = require('express-session');
 const app = express();
 const database = require('./api/backend/database');
-const Profile = require('./api/backend/profile');
-const chatRoutes = require('./api/PageViews/chat');
-const userRoutes = require('./api/PageViews/users');
-const searchRoutes = require('./api/PageViews/search');
-const recommendRoutes = require('./api/PageViews/recommend');
-const locationRoutes = require('./api/PageViews/location');
-const notificationRoutes = require('./api/PageViews/notifications');
-const accountRoutes = require('./api/PageViews/account');
+
+const chatRoutes = require('./api/pageViews/chat');
+const userRoutes = require('./api/pageViews/users');
+const searchRoutes = require('./api/pageViews/search');
+const recommendRoutes = require('./api/pageViews/recommend');
+const locationRoutes = require('./api/pageViews/location');
+const notificationRoutes = require('./api/pageViews/notifications');
+const accountRoutes = require('./api/pageViews/account');
+const email_handler = require('./api/email');
 
 app.use(session({
     key: 'user_sid',
@@ -17,7 +18,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        expires: 900000000
+        expires: 600000000
     }
 }));
 
@@ -42,7 +43,6 @@ app.use('/notifications', notificationRoutes);
 app.get("/:code?", (req, res) => {
     var userNotification;
     let db = new database;
-    let profile = new Profile;
 
     if (req.params.code) {
         if (req.params.code == 'incomplete') {
@@ -68,7 +68,7 @@ app.get("/:code?", (req, res) => {
                 userLogged: (req.session.user === undefined ? false : true)
             });
         } else {
-            var activation = profile.activate_account(req.params.code);
+            var activation = db.activate_account(req.params.code);
             activation.then(function(data) {
                 userNotification = 'valid';
                 res.render('index', {
@@ -107,7 +107,7 @@ app.post('/', (req, res) => {
             res2.redirect('/');
         },
         function(err) {
-            console.log(`Failed log in attempt.\nHere is the reason ya done goofed: ${err}`);
+            console.log(`Failed log in attempt.\nReason: ${err}`);
             db.close();
             res.status(204).end();
         })

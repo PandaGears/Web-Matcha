@@ -7,37 +7,37 @@ html
 	body
 		include navbar
 
-		.container.text-center
+		.container
 			h1.mt-white.text-center.mt-5.display-3#heading Edit the Profile of #{username}
 
-		.container.mx-auto.my-3.centerage(style='max-width: 1200px;')
+		.container.mx-auto.my-3(style='max-width: 1200px;')
 			.card.mx-auto(style='max-width: 1200px;')
 				if imageExists
 					img.img-fluid.w-100(src=userImage, alt='User Image')
 				else
-					img.img-fluid.w-100(src='/images.png', alt='No Image Available')
+					img.img-fluid.w-100(src='https://res.cloudinary.com/ddrrwygt1/image/upload/v1591020994/images_rxeryf.png', alt='No Image Available')
 				br
 				a#UpdateImg.btn.btn-success.btn-block.btn-lg.butt(href='/user/images') Change Image(s)
 
 				.card-body
-					h4.card-title Public Details
+					h4.card-title.text-center Public Details
 					hr
 					form#account(name="account", action='', method='POST' novalidate)
-						.form-group
+						.form-group.text-center
 							label(for='name' style="font-size: 3vw") Name:
 							br
 							label( style="font-size: 2vw") First Name
-							input#userName.form-control(type='text' placeholder='First Name' name='userName' value=FirstName style="width: 300px")
+							input#userName.form-control(type='text' placeholder='First Name' name='userName' value=userFirstName style="width: 300px")
 							p#firstNameError
 							label( style="font-size: 2vw") Last Name
-							input#userSurname.form-control(type='text' placeholder='Last Name' name='userSurname' value=LastName style="width: 300px")
+							input#userSurname.form-control(type='text' placeholder='Last Name' name='userSurname' value=userLastName style="width: 300px")
 							p#surnameError
-						if (age)
-							label(for='age' style="font-size: 2vw") Age
-							p#AgeDisplay.pl-3 #{age} 
-							| (Don't bother finding a way to change this... You can't change your birth)
+							if (age)
+								label(for='age' style="font-size: 2vw") Age
+								p#AgeDisplay #{age} 
+								| (Don't bother finding a way to change this... You can't change your birth)
 
-						.form-group
+						.form-group.text-center
 							label(for='gender' style="font-size: 2vw") Gender
 							br
 							if userGender === 'Male'
@@ -56,7 +56,7 @@ html
 									option(value='NB') Non-Binary
 									option(value='Male') Male
 									option(value='Female') Female
-						.form-group
+						.form-group.text-center
 							label(for='orientation' style="font-size: 2vw") Sexual Orientation
 							br
 							if userOrientation === 'hetero'
@@ -103,21 +103,28 @@ html
 									option(value='homo') Homosexual
 									option(value='hetero') Heterosexual
 									option(value='pan') Pansexual
-
+							else if userOrientation === 'pan'
+								select#userSexPref.custom-select(name='sexPref' style="width: 300px")
+									option(value='pan') Pansexual
+									option(value="aro") Aromantic
+									option(value="ace") Asexual
+									option(value='bi') Bisexual
+									option(value='homo') Homosexual
+									option(value='hetero') Heterosexual
 							else
 								select#userSexPref.custom-select(name='sexPref' style="width: 300px")
 									option(value='pan') Pansexual
 									option(value='bi') Bisexual
 									option(value='homo') Homosexual
 									option(value='hetero') Heterosexual
-									ption(value="aro") Aromantic
+									option(value="aro") Aromantic
 									option(value="ace") Asexual
 						hr
-						h4.card-title Bio
+						h4.card-title.text-center Bio
 						textarea#userBio(placeholder='Biography' name='userBio' form="account" rows='3').form-control= userBio
 
 						hr
-						p.h5 Your current list of interests:
+						p.h5.text-center Your current list of interests:
 						each val in userInterests
 							span.badge.badge-primary.mx-1(style="font-size: 2vw") #{val.interest}
 						hr
@@ -126,27 +133,27 @@ html
 						p#deetsPara.text-success.pl-3
 
 		if !age
-			.container.mx-auto.my-3.centerage(style='max-width: 1200px;')
+			.container.mx-auto.my-3(style='max-width: 1200px;')
 				.card.mx-auto(style='max-width: 1200px;')
-					.card-body
+					.card-body.text-center
 						h4.card-title Date of Birth
 						hr
 						input#userDOB.form-control(type="date" name="DOB")
 						button#UpdateDOB.butt.btn.btn-success.btn-block.btn-lg(type='button', onclick='updateDoB()', value='dob') Set Date of Birth
 						p#dobPara.text-success.pl-3
 
-		.container.mx-auto.my-3.centerage(style='max-width: 1200px;')
+		.container.mx-auto.my-3(style='max-width: 1200px;')
 			.card.mx-auto(style='max-width: 1200px;')
-				.card-body
+				.card-body.text-center
 					h4.card-title Location
 					br
 					input#pac-input.form-control(type='text' placeholder='Enter a location' style="width: 300px")
 					#map
 					p#locPara.text-success.pl-3
 
-		.container.mx-auto.my-3.centerage(style='max-width: 1200px;')
+		.container.mx-auto.my-3(style='max-width: 1200px;')
 			.card.mx-auto(style='max-width: 1200px;')
-				.card-body
+				.card-body.text-center
 					h4.card-title Add Interests
 					small#HelpBlock.form-text.text-muted
 						| You can add multiple interests at a time, remember: ya gotta ADD a hashtag and leave a space between. Example: #food #tacos
@@ -158,9 +165,9 @@ html
 					p#interestAError
 					p#interestsPara.text-success.pl-3
 
-		.container.mx-auto.my-3.centerage(style='max-width: 1200px;')
+		.container.mx-auto.my-3(style='max-width: 1200px;')
 			.card.mx-auto(style='max-width: 1200px;')
-				.card-body
+				.card-body.text-center
 					h4.card-title Remove Interests
 					small#HelpBlock.form-text.text-muted
 						| You can remove multiple interests at a time, remember: ya gotta ADD a hashtag and leave a space between. Example: #food #tacos
@@ -172,9 +179,9 @@ html
 					p#interestRError
 					p#interestsRemovedPara.text-success.pl-3
 
-		.container.mx-auto.my-3.centerage(style='max-width: 1200px;')
+		.container.mx-auto.my-3(style='max-width: 1200px;')
 			.card.mx-auto(style='max-width: 1200px;')
-				.card-body
+				.card-body.text-center
 					h4.card-title Username
 					small#usernameHelpBlock.form-text.text-muted
 						| All usernames will be forced to lower case.
@@ -184,9 +191,9 @@ html
 					button#updateUsername.btn.btn-success.btn-block.btn-lg.butt(type='button', onclick='changeUsername()', value='username') Update Username
 					p#unamePara.text-success.pl-3
 
-		.container.mx-auto.my-3.centerage(style='max-width: 1200px;')
+		.container.mx-auto.my-3(style='max-width: 1200px;')
 			.card.mx-auto(style='max-width: 1200px;')
-				.card-body
+				.card-body.text-center
 					h4.card-title Email
 					br
 					input#Email.form-control(type='email' placeholder='Email' name='Email' value=Email style="width: 300px")
@@ -194,9 +201,9 @@ html
 					button#updateEmail.btn.btn-success.btn-block.btn-lg.butt(type='button', onclick='changeEmail()', value='email') Update Email
 					p#emailPara.text-success.pl-3
 
-		.container.mx-auto.my-3.centerage(style='max-width: 1200px;')
+		.container.mx-auto.my-3(style='max-width: 1200px;')
 			.card.mx-auto(style='max-width: 1200px;')
-				.card-body
+				.card-body.text-center
 					h4.card-title Password
 					small#passwordHelpBlock.form-text.text-muted
 						| Your password must be 8 characters long and contain letters and numbers. It must not contain spaces, special characters, or emojis.
@@ -214,5 +221,5 @@ html
 		include global_scripts
 		script(src="/location.js")
 		script(src="/account.js")
-		script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBgeMeYZgjDyRWc7-oMRsJwP9-NpVGP7xs&libraries=places&callback=initMap' async='' defer='')
+		script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAQzFAmjAdYsqaKwRd-ppMpBzbDH-30t3g&libraries=places&callback=initMap' async='' defer='')
 

@@ -2,20 +2,18 @@ const express = require('express');
 const router = express.Router();
 const app = express();
 const database = require('../../api/backend/database');
-const Profile = require('../backend/profile');
 
 app.use(express.static('/../../styles'));
 app.use(express.static('/../../images'));
 app.use(express.static('/../../scripts'));
 
 var DB = new database;
-var profile = new Profile;
 
 function toRad(Value) {
     return Value * Math.PI / 180;
 }
 
-function DistanceApp(user1, user2) {
+function appendDistance(user1, user2) {
     if (!user2.userLocationlat || !user2.userLocationlng)
         return (9999);
     var R = 6371;
@@ -47,13 +45,13 @@ router.get('/', (req, res, next) => {
 
             if (!userOrientation || !userGender)
                 res.redirect('/user/account/incomplete');
-            var userArray = profile.get_matches(userOrientation, userGender, req.session.user, userAge, req.session.ageDiff, req.session.minFame);
+            var userArray = DB.get_matches(userOrientation, userGender, req.session.user, userAge, req.session.ageDiff, req.session.minFame);
             userArray.then(function(data1) {
                 if (!data1[0])
                     arrayExists = 0;
                 else
                     data1.forEach(element => {
-                        element.distance = DistanceApp(data[0], element);
+                        element.distance = appendDistance(data[0], element);
                         element.fame = element.Likes - element.userDislikes;
                     });
                 if (req.session.sortType) {
@@ -67,11 +65,11 @@ router.get('/', (req, res, next) => {
                         });
                     } else if ((req.session.sortType == 'FameUp')) {
                         data1 = data1.sort(function(a, b) {
-                            return a.popularity - b.popularity;
+                            return a.Popularity - b.Popularity;
                         });
                     } else if ((req.session.sortType == 'FameDown')) {
                         data1 = data1.sort(function(a, b) {
-                            return b.popularity - a.popularity;
+                            return b.Popularity - a.Popularity;
                         });
                     } else if ((req.session.sortType == 'Closer')) {
                         data1 = data1.sort(function(a, b) {
@@ -91,39 +89,39 @@ router.get('/', (req, res, next) => {
                                 data1.splice(index, 1);
                         });
                     });
-                    var Arrays = new Array();
+                    var testArr = new Array();
                     if (req.session.interest) {
-                        let Usersliking = DB.get_interested(req.session.interest);
-                        Usersliking.then(function(interested) {
+                        let interestedUsers = DB.get_interested(req.session.interest);
+                        interestedUsers.then(function(interested) {
                             interested.forEach(element1 => {
                                 data1.forEach(function(element2, index) {
                                     if (element1.user == element2.username)
-                                        Arrays.push(element2);
+                                        testArr.push(element2);
                                 });
                             });
                             if (req.session.sortType) {
                                 if (req.session.sortType == 'AgeUp') {
-                                    Arrays = Arrays.sort(function(a, b) {
+                                    testArr = testArr.sort(function(a, b) {
                                         return a.userAge - b.userAge;
                                     });
                                 } else if ((req.session.sortType == 'AgeDown')) {
-                                    Arrays = Arrays.sort(function(a, b) {
+                                    testArr = testArr.sort(function(a, b) {
                                         return b.userAge - a.userAge;
                                     });
                                 } else if ((req.session.sortType == 'FameUp')) {
-                                    Arrays = Arrays.sort(function(a, b) {
-                                        return a.popularity - b.popularity;
+                                    testArr = testArr.sort(function(a, b) {
+                                        return a.Popularity - b.Popularity;
                                     });
                                 } else if ((req.session.sortType == 'FameDown')) {
-                                    Arrays = Arrays.sort(function(a, b) {
-                                        return b.popularity - a.popularity;
+                                    testArr = testArr.sort(function(a, b) {
+                                        return b.Popularity - a.Popularity;
                                     });
                                 } else if ((req.session.sortType == 'Closer')) {
-                                    Arrays = Arrays.sort(function(a, b) {
+                                    testArr = testArr.sort(function(a, b) {
                                         return a.distance - b.distance;
                                     });
                                 } else if ((req.session.sortType == 'Further')) {
-                                    Arrays = Arrays.sort(function(a, b) {
+                                    testArr = testArr.sort(function(a, b) {
                                         return b.distance - a.distance;
                                     });
                                 }
@@ -131,7 +129,7 @@ router.get('/', (req, res, next) => {
                             res.render('recommendations', {
                                 title: 'Recommendations',
                                 user: (req.session.user === undefined ? "Username" : req.session.user),
-                                userArray: Arrays,
+                                userArray: testArr,
                                 userLogged: (req.session.user === undefined ? false : true),
                                 arrayExists: arrayExists,
                                 maxDist: +req.session.maxDist,

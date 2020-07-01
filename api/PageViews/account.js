@@ -6,20 +6,17 @@ const mysql = require('mysql');
 const multer = require("multer");
 const cloudinary = require("cloudinary");
 const cloudinaryStorage = require("multer-storage-cloudinary");
-const Profile = require('../backend/profile');
 var encrypt = require('../encrypt');
 
-var profile = new Profile;
-
 cloudinary.config({
-    cloud_name: 'ddrrwygt1',
-    api_key: '997425764818684',
-    api_secret: 's6FZ6ehgHhe4Rkhta6sMLGgfGr8'
+    cloud_name: 'matchawtc',
+    api_key: '939787686612891',
+    api_secret: '3pbLbXEAT4CgZ20R5DMUeo5jTvQ'
 });
 const storage = cloudinaryStorage({
     cloudinary: cloudinary,
     folder: "userImages",
-    allowedFormats: ["jpg", "png", "gif"],
+    allowedFormats: ["jpg", "png"],
     transformation: [{ width: 750, height: 750, crop: "limit" }]
 });
 
@@ -51,14 +48,14 @@ router.get('/', (req, res) => {
                     title: 'Account',
                     user: (req.session.user === undefined ? "Username" : req.session.user),
                     username: req.session.user,
-                    FirstName: data[0].FirstName,
-                    LastName: data[0].LastName,
+                    userFirstName: data[0].userFirstName,
+                    userLastName: data[0].userLastName,
                     userGender: data[0].userGender,
                     userImage: data[0].userImage,
                     imageArray: imagearray,
                     imageExists: data[0].userImage ? 1 : 0,
                     userOrientation: data[0].userOrientation,
-                    Email: data[0].Email,
+                    userEmail: data[0].userEmail,
                     userBio: data[0].userBiography,
                     userLat: data[0].userLat,
                     userInterests: data1,
@@ -74,7 +71,7 @@ router.get('/', (req, res) => {
 router.post('/public', (req, res) => {
     let db = new database;
 
-    let sql = 'UPDATE users SET FirstName=?, LastName=?, userGender=?, userOrientation=?, userBiography=? WHERE username=?'
+    let sql = 'UPDATE users SET userFirstName=?, userLastName=?, userGender=?, userOrientation=?, userBiography=? WHERE username=?'
     let inserts = [req.body.userName, req.body.userSurname, req.body.userGender, req.body.userSexPref, req.body.userBio, req.session.user];
     sql = mysql.format(sql, inserts);
     let accountUpdate = db.query(sql);
@@ -88,7 +85,8 @@ router.post('/public', (req, res) => {
 
 router.post('/email', (req, res) => {
     let db = new database;
-    let emailUpdate = profile.change_email(req.session.user, req.body.Email);
+
+    let emailUpdate = db.change_email(req.session.user, req.body.userEmail);
     emailUpdate.then(function(data) {
         db.userComplete(req.session.user);
         res.json(data);
@@ -180,7 +178,7 @@ router.post('/username', (req, res) => {
                     res.json("Username taken");
                     return;
                 }, function(err) {
-                    let usernameUpdate = profile.change_username(req.session.user, req.body.userLogin);
+                    let usernameUpdate = db.change_username(req.session.user, req.body.userLogin);
                     usernameUpdate.then(function(data) {
                         req.session.user = req.body.userLogin;
                         res.json("Success");
@@ -222,7 +220,7 @@ router.post('/password', (req, res) => {
         let db = new database;
         let hash = encrypt.cryptPassword(req.body.password);
         hash.then(function(data) {
-            let sql = `UPDATE users SET Password='${data}' WHERE username='${req.session.user}'`
+            let sql = `UPDATE users SET userPassword='${data}' WHERE username='${req.session.user}'`
             db.query(sql);
             res.json("Success");
         }, function(err) {

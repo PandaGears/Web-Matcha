@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/PandaGears/Nodey.git"
+        "url": "git+https://github.com/PandaGears/matcha.git"
     },
     "author": "Tamara Radloff",
     "license": "ISC",

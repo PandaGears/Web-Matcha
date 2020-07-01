@@ -45,7 +45,7 @@ html
 									i.fa.mx-2.text-success.fa-circle
 									| Online
 					hr
-					h1.display-4.text-center.card-title.text-capitalize #{FirstName} #{LastName}
+					h1.display-4.text-center.card-title.text-capitalize #{userFirstName} #{userLastName}
 					if liked == 1
 						h5.card-subtitle.mb-2(style="text-align: center")
 							| This user has liked you!
@@ -87,7 +87,7 @@ html
 						h4.card-subtitle.mb-2
 							p(style="text-align: center")
 								i.fa.mx-2.fa-trophy.text-warning
-								| Popularity: #{popularity}
+								| Popularity: #{Popularity}
 					hr
 					
 					p.h4(style="text-align: center") I am a:

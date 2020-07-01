@@ -31,8 +31,8 @@ router.get('/likes', (req, res) => {
         res.redirect('/user/login');
         return;
     }
-    var Likes = DB.query(`SELECT * FROM likes WHERE liked = '${req.session.user}'`);
-    Likes.then(function(data) {
+    var userLikes = DB.query(`SELECT * FROM likes WHERE liked = '${req.session.user}'`);
+    userLikes.then(function(data) {
         DB.query(`UPDATE likes SET unread = 0 WHERE unread = 1 AND liked = '${req.session.user}'`);
         res.render('likes', {
             title: 'Profile Likes',

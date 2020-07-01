@@ -6,15 +6,12 @@ const mysql = require('mysql');
 const validation = require('../../scripts/formValidation.js');
 const email_handler = require('../email');
 const encrypt = require('../encrypt');
-const Profile = require('../backend/profile');
 
 app.set('view engine', 'pug');
 app.use(express.static('/../../styles'));
-app.use(express.static('/../../images'));
 app.use(express.static('/../../scripts'));
 
 var DB = new database;
-var profile = new Profile;
 
 function toRad(Value) {
     return Value * Math.PI / 180;
@@ -71,12 +68,12 @@ router.post('/login', (req, res, next) => {
     }
 });
 
-router.get('/registration/:error?', (req, res, next) => {
+router.get('/register/:error?', (req, res, next) => {
     if (req.session.user) {
         res.redirect('/');
         return;
     }
-    res.render('registration', {
+    res.render('register', {
         title: 'Register',
         error: req.params.error,
         user: (req.session.user === undefined ? "Username" : req.session.user),
@@ -84,10 +81,10 @@ router.get('/registration/:error?', (req, res, next) => {
     });
 });
 
-router.post('/registration', (req, res, next) => {
+router.post('/register', (req, res, next) => {
     let db = new database;
-    if (validation.registrationFormValid(req.body.userLogin, req.body.userName, req.body.userSurname, req.body.Email, req.body.userPass, req.body.userConfPass) != true) {} else {
-        var registerAttempt = db.register(req.body.userLogin, req.body.userName, req.body.userSurname, req.body.Email, req.body.userPass, req.body.userConfPass);
+    if (validation.registrationFormValid(req.body.userLogin, req.body.userName, req.body.userSurname, req.body.userEmail, req.body.userPass, req.body.userConfPass) != true) {} else {
+        var registerAttempt = db.register(req.body.userLogin, req.body.userName, req.body.userSurname, req.body.userEmail, req.body.userPass, req.body.userConfPass);
 
         registerAttempt.then(function(ret) {
                 res.json("success");
@@ -116,7 +113,7 @@ router.get('/profile/:user?', (req, res, next) => {
                         imagearray.push(element.image);
                     });
                     if (req.params.user !== req.session.user)
-                        profile.view_profile(req.params.user, req.session.user);
+                        DB.view_profile(req.params.user, req.session.user);
                     let interests = DB.query(`SELECT * FROM interests WHERE user='${req.params.user}'`)
                     interests.then(function(data1) {
                         let current_user = DB.query(`SELECT * FROM users WHERE username = '${req.session.user}'`);
@@ -131,10 +128,10 @@ router.get('/profile/:user?', (req, res, next) => {
                                     title: 'Profile',
                                     user: (req.session.user === undefined ? "Username" : req.session.user),
                                     username: data[0].username,
-                                    FirstName: data[0].FirstName,
-                                    LastName: data[0].LastName,
+                                    userFirstName: data[0].userFirstName,
+                                    userLastName: data[0].userLastName,
                                     userGender: data[0].userGender,
-                                    popularity: data[0].popularity,
+                                    Popularity: data[0].Popularity,
                                     userImage: data[0].userImage,
                                     imageArray: imagearray,
                                     imageExists: data[0].userImage ? 1 : 0,
@@ -169,10 +166,10 @@ router.get('/profile/:user?', (req, res, next) => {
                 title: 'Profile',
                 user: (req.session.user === undefined ? "Username" : req.session.user),
                 username: data[0].username,
-                FirstName: data[0].FirstName,
-                LastName: data[0].LastName,
+                userFirstName: data[0].userFirstName,
+                userLastName: data[0].userLastName,
                 userGender: data[0].userGender,
-                popularity: data[0].popularity,
+                Popularity: data[0].Popularity,
                 userImage: data[0].userImage,
                 imageExists: data[0].userImage ? 1 : 0,
                 userOrientation: data[0].userOrientation,
@@ -213,13 +210,13 @@ router.get('/images', (req, res, next) => {
     })
 });
 
-router.get('/password_reset/:code?', (req, res, next) => {
+router.get('/pass_reset/:code?', (req, res, next) => {
     if (req.session.user !== undefined) {
         res.redirect('/');
         return;
     }
     if (req.params.code) {
-        let codeCheck = profile.activate_account(req.params.code);
+        let codeCheck = DB.activate_account(req.params.code);
         codeCheck.then(function(data) {
             res.render('new_password', {
                 title: 'new_password',
@@ -230,7 +227,7 @@ router.get('/password_reset/:code?', (req, res, next) => {
             res.redirect('/');
         })
     } else {
-        res.render('password_reset', {
+        res.render('pass_reset', {
             title: 'pass_reset',
             user: (req.session.user === undefined ? "Username" : req.session.user)
         });
@@ -286,16 +283,16 @@ router.post('/logout', (req, res) => {
 })
 
 router.post('/forgot_pass', (req, res) => {
-    if (!req.body.Email) {
+    if (!req.body.userEmail) {
         res.json('Invalid');
         return;
     } else {
-        let sql = "SELECT * FROM users WHERE Email = ?";
-        let inserts = [req.body.Email];
+        let sql = "SELECT * FROM users WHERE userEmail = ?";
+        let inserts = [req.body.userEmail];
         sql = mysql.format(sql, inserts);
         let getUser = DB.query(sql);
         getUser.then(function(data) {
-            email_handler.reset_password(req.body.Email, data[0].userCode);
+            email_handler.reset_password(req.body.userEmail, data[0].userCode);
             res.json('Reset Email Sent');
         }).catch(() => {
             res.json('Email does not exist');
@@ -329,7 +326,7 @@ router.post('/like', (req, res, next) => {
                         sql = mysql.format(sql, inserts);
                         let like = DB.query(sql);
                         like.then(function(data) {
-                            let sql = "UPDATE users SET Likes = Likes + 1, popularity = popularity + 1 WHERE username=?";
+                            let sql = "UPDATE users SET Likes = Likes + 1, Popularity = Popularity + 1 WHERE username=?";
                             let inserts = [req.body.liked];
                             sql = mysql.format(sql, inserts);
                             let finalization = DB.query(sql);
@@ -387,7 +384,7 @@ router.post('/dislike', (req, res) => {
                 sql = mysql.format(sql, inserts);
                 let like = DB.query(sql);
                 like.then(function(data) {
-                    let sql = "UPDATE users SET Likes = Likes - 1, popularity = popularity - 1 WHERE username = ?";
+                    let sql = "UPDATE users SET Likes = Likes - 1, Popularity = Popularity - 1 WHERE username = ?";
                     let inserts = [req.body.disliked];
                     sql = mysql.format(sql, inserts);
                     let finalization = DB.query(sql);
@@ -401,7 +398,7 @@ router.post('/dislike', (req, res) => {
                 sql = mysql.format(sql, inserts);
                 let like = DB.query(sql);
                 like.then(function(data) {
-                    let sql = "UPDATE users SET Likes = Likes + 1, popularity = popularity + 1 WHERE username = ?";
+                    let sql = "UPDATE users SET Likes = Likes + 1, Popularity = Popularity + 1 WHERE username = ?";
                     let inserts = [req.body.disliked];
                     sql = mysql.format(sql, inserts);
                     let finalization = DB.query(sql);
@@ -437,7 +434,7 @@ router.post('/pass_change', (req, res) => {
     getUser.then(function(data) {
         let newPassword = encrypt.cryptPassword(req.body.newPassword);
         newPassword.then(function(data) {
-            let sql = "UPDATE users SET Password = ? WHERE userCode = ?"
+            let sql = "UPDATE users SET userPassword = ? WHERE userCode = ?"
             let inserts = [data, req.body.userCode];
             sql = mysql.format(sql, inserts);
             let passChange = DB.query(sql);

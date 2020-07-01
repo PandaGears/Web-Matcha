@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const app = express();
-const database = require('../backend/database');
+const database = require('../../api/backend/database');
 const mysql = require('mysql');
 
 app.set('view engine', 'pug');

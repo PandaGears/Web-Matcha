@@ -143,7 +143,7 @@ function updateDoB() {
     if (age < 18) {
         swal(
             'Error!',
-            `You must be over 16 to use this site.`,
+            `Do you want me to call the murder-- I mean cops? TOO YOUNG.`,
             'error'
         )
         setTimeout(() => {
