@@ -9,14 +9,14 @@ const cloudinaryStorage = require("multer-storage-cloudinary");
 var encrypt = require('../encrypt');
 
 cloudinary.config({
-    cloud_name: 'matchawtc',
-    api_key: '939787686612891',
-    api_secret: '3pbLbXEAT4CgZ20R5DMUeo5jTvQ'
+    cloud_name: 'ddrrwygt1',
+    api_key: '997425764818684',
+    api_secret: 's6FZ6ehgHhe4Rkhta6sMLGgfGr8'
 });
 const storage = cloudinaryStorage({
     cloudinary: cloudinary,
     folder: "userImages",
-    allowedFormats: ["jpg", "png"],
+    allowedFormats: ["jpg", "png", "gif"],
     transformation: [{ width: 750, height: 750, crop: "limit" }]
 });
 
@@ -44,7 +44,7 @@ router.get('/', (req, res) => {
             });
             let interests = DB.query(`SELECT * FROM interests WHERE user='${req.session.user}'`)
             interests.then(function(data1) {
-                res.render('account', {
+                res.render('editprofile', {
                     title: 'Account',
                     user: (req.session.user === undefined ? "Username" : req.session.user),
                     username: req.session.user,

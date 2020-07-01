@@ -91,7 +91,7 @@ function blockUser(user) {
             if (data == 'blocked') {
                 swal({
                         title: 'User Blocked!',
-                        text: `You have successfully blocked this user.`,
+                        text: `You have successfully blocked this user... good call`,
                         type: 'success'
                     })
                     .then(function() {
@@ -100,7 +100,7 @@ function blockUser(user) {
             } else {
                 swal({
                         title: 'User Unblocked!',
-                        text: `You removed your block on this user.`,
+                        text: `You removed your block on this user... probably was a mistake`,
                         type: 'success'
                     })
                     .then(function() {

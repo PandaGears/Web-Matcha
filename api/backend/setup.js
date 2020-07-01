@@ -2,9 +2,6 @@ const db = require('./config');
 var mysql = require('mysql');
 const database = require('../backend/database');
 
-// user: 02
-// pass: f
-
 var DB = new database();
 
 var setupDB = function setupDB() {
@@ -43,7 +40,7 @@ var setupTables = function setupTables() {
                 if (result.length > 0) {
 
                 } else {
-                    console.log('user table not found.');
+                    console.log("\x1b[31m", "cannot find ze user table.");
                     var sql = `CREATE TABLE IF NOT EXISTS users (
 					userID int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
 					username TINYTEXT NOT NULL,
@@ -2608,7 +2605,7 @@ var setupTables = function setupTables() {
                         DB.query(`INSERT INTO interests VALUES ("#Unity", "uraniumumbra")`);
                         DB.query(`INSERT INTO interests VALUES ("#^u^", "uraniumumbra")`);
                         DB.query(`INSERT INTO interests VALUES ("#ART.", "undyingumbrage")`);
-
+                        console.log("\x1b[32m", "user table built with me literal bear hands.");
                     });
                 }
             });
@@ -2630,7 +2627,7 @@ var setupTables = function setupTables() {
                 if (result.length > 0) {
 
                 } else {
-                    console.log('message table not found.');
+                    console.log("\x1b[31m", "cannot find ze message table.");
                     var sql = `CREATE TABLE IF NOT EXISTS messages (
 					receiver LONGTEXT NOT NULL,
 					sender LONGTEXT NOT NULL,
@@ -2640,7 +2637,7 @@ var setupTables = function setupTables() {
 					);`
                     conn.query(sql, function(err, result) {
                         if (err) throw err;
-
+                        console.log("\x1b[32m", 'message table built with me literal bear hands.')
                     });
                 }
             });
@@ -2661,7 +2658,7 @@ var setupTables = function setupTables() {
                 if (result.length > 0) {
 
                 } else {
-                    console.log('images table not found.');
+                    console.log("\x1b[31m", "cannot find ze images table.");
                     var sql = `CREATE TABLE IF NOT EXISTS images (
 					imageOwner LONGTEXT,
 					image VARCHAR(2083),
@@ -2669,7 +2666,7 @@ var setupTables = function setupTables() {
 					);`
                     conn.query(sql, function(err, result) {
                         if (err) throw err;
-                        console.log("images table created");
+                        console.log("\x1b[32m", "images table built with me literal bear hands.");
                     });
                 }
             });
@@ -2690,7 +2687,7 @@ var setupTables = function setupTables() {
                 if (result.length > 0) {
 
                 } else {
-                    console.log('likes table not found.');
+                    console.log("\x1b[31m", "cannot find ze likes table.");
                     var sql = `CREATE TABLE IF NOT EXISTS likes (
 					type INT(1) NOT NULL,
 					liked LONGTEXT NOT NULL,
@@ -2699,7 +2696,7 @@ var setupTables = function setupTables() {
 					);`
                     conn.query(sql, function(err, result) {
                         if (err) throw err;
-                        console.log("likes table created");
+                        console.log("\x1b[32m", "likes table built with me literal bear hands.");
                     });
                 }
             });
@@ -2720,7 +2717,7 @@ var setupTables = function setupTables() {
                 if (result.length > 0) {
 
                 } else {
-                    console.log('views table not found.');
+                    console.log("\x1b[31m", "cannot find ze views table.");
                     var sql = `CREATE TABLE IF NOT EXISTS views (
 					viewed LONGTEXT,
 					viewer LONGTEXT,
@@ -2728,7 +2725,7 @@ var setupTables = function setupTables() {
 					);`
                     conn.query(sql, function(err, result) {
                         if (err) throw err;
-                        console.log("views table created");
+                        console.log("\x1b[32m", "views table built with me literal bear hands.");
                     });
                 }
             });
@@ -2749,14 +2746,14 @@ var setupTables = function setupTables() {
                 if (result.length > 0) {
 
                 } else {
-                    console.log('interests table not found.');
+                    console.log("\x1b[31m", "cannot find ze interests table.");
                     var sql = `CREATE TABLE IF NOT EXISTS interests (
 					interest varchar(32),
 					user TINYTEXT
 					);`
                     conn.query(sql, function(err, result) {
                         if (err) throw err;
-                        console.log("interests table created");
+                        console.log("\x1b[32m", "interests table built with me literal bear hands.");
                     });
                 }
             });
@@ -2778,14 +2775,14 @@ var setupTables = function setupTables() {
                 if (result.length > 0) {
 
                 } else {
-                    console.log('blocks table not found.');
+                    console.log("\x1b[31m", "cannot find ze blocks table.");
                     var sql = `CREATE TABLE IF NOT EXISTS blocks (
 					blocker LONGTEXT,
 					blocked LONGTEXT
 					);`
                     conn.query(sql, function(err, result) {
                         if (err) throw err;
-                        console.log("blocks table created");
+                        console.log("\x1b[32m", "blocks table built with me literal bear hands.");
                     });
                 }
             });
@@ -2807,7 +2804,7 @@ var setupTables = function setupTables() {
                 if (result.length > 0) {
 
                 } else {
-                    console.log('dislikes table not found.');
+                    console.log("\x1b[31m", "cannot find ze dislikes table.");
                     var sql = `CREATE TABLE IF NOT EXISTS dislikes (
 					disliked LONGTEXT,
 					disliker LONGTEXT,
@@ -2815,7 +2812,7 @@ var setupTables = function setupTables() {
 					);`
                     conn.query(sql, function(err, result) {
                         if (err) throw err;
-                        console.log("dislikes table created");
+                        console.log("\x1b[32m", "dislikes table built with me literal bear hands.");
                     });
                 }
             });
@@ -2835,14 +2832,14 @@ var setupTables = function setupTables() {
             function(err, result) {
                 if (err) throw err;
                 if (result.length > 0) {} else {
-                    console.log('reports table not found.');
+                    console.log("\x1b[31m", "cannot find ze reports table.");
                     var sql = `CREATE TABLE IF NOT EXISTS reports (
 					reported LONGTEXT,
 					reporter LONGTEXT
 					);`
                     conn.query(sql, function(err, result) {
                         if (err) throw err;
-                        console.log("reports table created");
+                        console.log("\x1b[32m", "reports table built with me literal bear hands.");
                     });
                 }
             });

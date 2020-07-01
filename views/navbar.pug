@@ -10,27 +10,31 @@ nav.navbar.navbar-expand-lg.navbar-light.mbg-white.sticky-top
 		ul.navbar-nav.mr-auto.mt-2.mt-lg-0
 			if userLogged
 				li#Recomm.nav-item
-					a.nav-link(href='/recommendations') Search
+					a.nav-link(href='/recommendations') 
+						i.i.fa.fa-address-book-o
+						|	Search
 				li#Chat.nav-item
-					a.nav-link(href='/chat') Chat
+					a.nav-link(href='/chat')
+						i.fa.fa-commenting-o
+						|	Chat
 
 		if userLogged
-			ul.navbar-nav.ml-auto.mt-2.mt-lg-0.nav-flex-auto
+			ul.navbar-nav.mt-2.mt-lg-0.nav-flex-auto
 				li.nav-item.dropdown
 					a#NotificationDropdown.nav-link.dropdown-toggle(style="cursor: pointer;", role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
 						i.fa.fa-bell
 						span#Notif.badge.badge-pill.badge-danger.mx-2
 					.dropdown-menu(aria-labelledby='NotificationDropdown')
 						a.dropdown-item(href='/notifications/likes') 
-							i.fa.fa-heart
+							i.fa.fa-heart-o
 							|  Likes 
 							span#NotifLike.badge.badge-danger
 						a.dropdown-item(href='/chat') 
-							i.fa.fa-comments
+							i.fa.fa-commenting-o
 							|  Messages 
 							span#NotifMessage.badge.badge-danger
 						a.dropdown-item(href='/notifications/views') 
-							i.fa.fa-eye
+							i.fa.fa-eye-o
 							|  Views 
 							span#NotifView.badge.badge-danger
 
@@ -42,9 +46,6 @@ nav.navbar.navbar-expand-lg.navbar-light.mbg-white.sticky-top
 							a#Prof.dropdown-item(href='/user/profile')
 								i.fa.fa-user-circle(aria-hidden='true')
 								|  My Profile 
-							a#Acc.dropdown-item(href='/user/account')
-								i.fa.fa-cog(aria-hidden='true')
-								|  Edit Profile 
 							.dropdown-divider
 							a#LogoutBtn.dropdown-item(onclick='logout()', onmouseover="", style="cursor: pointer;")
 								i.fa.fa-sign-out
