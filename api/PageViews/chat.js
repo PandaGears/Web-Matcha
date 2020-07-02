@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const app = express();
-const database = require('../../api/backend/database');
+const database = require('../../api/database/database');
 const mysql = require('mysql');
 
 app.set('view engine', 'pug');
@@ -21,7 +21,10 @@ router.get('/', (req, res) => {
         DB.query(`UPDATE messages SET unread = 0 WHERE unread = 1 AND receiver = '${req.session.user}'`);
         let sql = "SELECT * FROM likes WHERE liked = ?"
         let inserts = [req.session.user];
+        let sql2 = "SELECT * FROM users WHERE userName = ?"
+        let inserts2 = [req.session.user];
         sql = mysql.format(sql, inserts);
+        sql2 = mysql.format(sql2, inserts2);
         let potentialFriends = DB.query(sql);
         potentialFriends.then(function(data) {
             data.forEach(function(item, index) {

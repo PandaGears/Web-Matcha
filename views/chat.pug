@@ -6,7 +6,7 @@ html(charset="utf8mb4")
 		link(rel='stylesheet', href='/emojionearea.min.css')
 		link(rel='stylesheet', href='/sweetalert2.css')
 	body
-		include navbar.pug
+		include navbar
 
 		.container
 			h3.text-center.my-3.mt-white.display-3#heading Chats here
@@ -15,22 +15,23 @@ html(charset="utf8mb4")
 			.row.justify-content-center
 				.col-md-4.col-xl-3.chat
 					.card.mb-sm-3.mb-md-0.contacts_card
-						.card-header
-							h4(style='color:white;') Contacts
-						
+						.card-header 
 						.card-body.contacts_body
 							ul.contacts
-								each user in friendList
+
+									h4.text-center(style='color:white;') #{items.imageowner}
+								each users in friendList
+									
 									if user.liker === activeChat
 										li.py-2.active(id=user.liker)
-											.d-flex.bd-highlight(onclick="setActive('"+user.liker+"');")
+											.d-flex.bd-highlight(onclick="setActive('"+users.liker+"');")
 												.user_info
-													span.selectedchat(style="color: red") * #{user.liker} *
+													span.selectedchat(style="color: red") * #{users.liker} *
 									else
 										li.py-2(id=user.liker)
-											.d-flex.bd-highlight(onclick="setActive('"+user.liker+"');")
+											.d-flex.bd-highlight(onclick="setActive('"+users.liker+"');")
 												.user_info
-													span #{user.liker}
+													span #{users.liker}
 									
 						.card-footer
 				.col-md-8.col-xl-6.chat

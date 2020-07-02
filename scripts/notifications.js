@@ -18,11 +18,6 @@ $(document).ready(function() {
                 notifications.messages = data.messages;
                 notifications.views = data.views;
 
-                document.getElementById("Notif").innerHTML = data.messages + data.likes + data.views;
-                document.getElementById("NotifLike").innerHTML = data.likes;
-                document.getElementById("NotifMessage").innerHTML = data.messages;
-                document.getElementById("NotifView").innerHTML = data.views;
-
                 if (notifications.likes > oldNotifications.likes) {
                     $('#notifys').html(`<div class="toast-header"><img class="rounded mr-2" src="https://res.cloudinary.com/ddrrwygt1/image/upload/v1591020989/logo_qdca6m.png" alt="Logo" style="width:25px;"/><strong class="mr-auto">Pan-der</strong><button class="ml-2 mb-1 close" type="button" data-dismiss="toast" aria-label="Close"><span aria-hidden="true">x</span></button></div>
 					<div
@@ -45,6 +40,10 @@ $(document).ready(function() {
                     $('#notifys').toast('show');
                 }
 
+                document.getElementById("Notif").innerHTML = data.messages + data.likes + data.views;
+                document.getElementById("NotifLike").innerHTML = data.likes;
+                document.getElementById("NotifMessage").innerHTML = data.messages;
+                document.getElementById("NotifView").innerHTML = data.views;
             },
             complete: function() {
                 setTimeout(worker, 5000);

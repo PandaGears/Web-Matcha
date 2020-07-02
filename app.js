@@ -1,7 +1,7 @@
 const express = require('express');
 var session = require('express-session');
 const app = express();
-const database = require('./api/backend/database');
+const database = require('./api/database/database');
 
 const chatRoutes = require('./api/pageViews/chat');
 const userRoutes = require('./api/pageViews/users');

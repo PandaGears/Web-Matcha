@@ -18,7 +18,7 @@ var confirm_email = function confirm_email(email, code) {
             from: 'noreply.matchaWTC@gmail.com',
             to: `${email}`,
             subject: 'Please verify your email',
-            text: `verify here and join the pack... VERIFY IT: http://localhost:8080/${code}`
+            text: `verify here... VERIFY: http://localhost:8080/${code}`
         };
 
         transporter.sendMail(mailOptions, function(error, info) {
