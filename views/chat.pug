@@ -6,7 +6,7 @@ html(charset="utf8mb4")
 		link(rel='stylesheet', href='/emojionearea.min.css')
 		link(rel='stylesheet', href='/sweetalert2.css')
 	body
-		include navbar
+		include navbar.pug
 
 		.container
 			h3.text-center.my-3.mt-white.display-3#heading Chats here
@@ -15,35 +15,32 @@ html(charset="utf8mb4")
 			.row.justify-content-center
 				.col-md-4.col-xl-3.chat
 					.card.mb-sm-3.mb-md-0.contacts_card
-						.card-header 
+						.card-header
+							h4.text-center Contacts
+						
 						.card-body.contacts_body
 							ul.contacts
-
-									h4.text-center(style='color:white;') #{items.imageowner}
-								each users in friendList
-									
+								each user in friendList
 									if user.liker === activeChat
 										li.py-2.active(id=user.liker)
-											.d-flex.bd-highlight(onclick="setActive('"+users.liker+"');")
+											.d-flex.bd-highlight(onclick="setActive('"+user.liker+"');")
 												.user_info
-													span.selectedchat(style="color: red") * #{users.liker} *
+													span.selectedchat(style="color: blue; font-weight: bold") * #{user.liker} *
 									else
 										li.py-2(id=user.liker)
-											.d-flex.bd-highlight(onclick="setActive('"+users.liker+"');")
+											.d-flex.bd-highlight(onclick="setActive('"+user.liker+"');")
 												.user_info
-													span #{users.liker}
-									
+													span #{user.liker}
 						.card-footer
-				.col-md-8.col-xl-6.chat
+				.col-md-1.col-xl-6.chat
 					.card#msgWrap
 						.card-header.msg_head
 							.d-flex.bd-highlight
-								
 								.user_info
 									if !activeChat
-										span#ChatWith Select a Chat:
+										span#ChatWith Select a Chat first:
 									else
-										span#ChatWith #{activeChat}
+										span#ChatWith Conversation with #{activeChat}
 									
 						.card-body.msg_card_body#populateme
 									

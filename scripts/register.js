@@ -45,7 +45,7 @@ function registrationHandler(data) {
             'error'
         )
     } else {
-        window.location.href = "/";
+        window.location.href = "/postRegistration";
     }
 }
 

@@ -15,7 +15,7 @@ var confirm_email = function confirm_email(email, code) {
             reject("No valid email given.");
 
         var mailOptions = {
-            from: 'noreply.matchaWTC@gmail.com',
+            from: 'noreply.matchastuffs@gmail.com',
             to: `${email}`,
             subject: 'Please verify your email',
             text: `verify here... VERIFY: http://localhost:8080/${code}`
@@ -33,7 +33,7 @@ var confirm_email = function confirm_email(email, code) {
 var reset_password = function reset_password(email, code) {
     return new Promise((resolve, reject) => {
         var mailOptions = {
-            from: 'noreply.matchaWTC@gmail.com',
+            from: 'noreply.matchastuffs@gmail.com',
             to: `${email}`,
             subject: 'Forgotten password',
             text: `I AM JUDGING YOU SO HARD, please follow this link to fix: http://localhost:8080/user/pass_reset/${code}`

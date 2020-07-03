@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const app = express();
-const database = require('../../api/database/database');
+const database = require('../../api/backend/database');
 
 app.use(express.static('/../../styles'));
 app.use(express.static('/../../images'));

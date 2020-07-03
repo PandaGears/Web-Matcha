@@ -226,7 +226,7 @@ function add_interest() {
         if (!validInterest(data)) {
             swal(
                 'Error!',
-                `${data} is not a correctly formatted interest`,
+                `${data} is not a correctly formatted interest, don't forget the '#'`,
                 'error'
             )
             setTimeout(() => {
@@ -264,7 +264,7 @@ function remove_interest() {
         if (!validInterest(data)) {
             swal(
                 'Error!',
-                `${data} is not a correctly formatted interest`,
+                `${data} is not a correctly formatted interest, don't forget the '#'`,
                 'error'
             )
             setTimeout(() => {

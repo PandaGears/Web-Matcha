@@ -12,8 +12,8 @@
 .card {
     min-height: 700px;
     max-height: 700px;
-    border-radius: 15px !important;
-    background-color: rgba(0, 0, 0, 0.4) !important;
+    border-radius: 1px !important;
+    background-color: rgba(255, 255, 255, 0.4) !important;
 }
 
 .contacts_body {
@@ -61,12 +61,10 @@
 }
 
 ::-webkit-input-placeholder {
-    /* Edge */
     color: black !important;
 }
 
  :-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
     color: black !important;
 }
 
@@ -77,13 +75,6 @@
 .type_msg:focus {
     box-shadow: none !important;
     outline: 0px !important;
-}
-
-.attach_btn {
-    border-radius: 15px 0 0 15px !important;
-    background-color: rgba(255, 255, 255, 0.3) !important;
-    border: 0 !important;
-    color: white !important;
 }
 
 .send_btn {

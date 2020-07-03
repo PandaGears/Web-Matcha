@@ -51,9 +51,9 @@ html
 		if notification === 'emailed'
 			script.
 				swal(
-					'Success!',
-					'GO CHECK YER EMAILS.',
-					'success'
+					title:	'Success!',
+					text:	'GO CHECK YER EMAILS.',
+					icon:	'success'
 				)
 
 		if notification === 'incomplete'
@@ -62,4 +62,11 @@ html
 					'Incomplete',
 					'HOW DID YA GET HERE!? GO FINISH YER REGISTRATION',
 					'error'
+				)
+		if notification === 'postRegistration'
+			script.
+				swal(
+					'Welcome!',
+					'Please confirm email and then login. :)',
+					'success'
 				)
