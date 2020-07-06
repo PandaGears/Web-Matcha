@@ -14,7 +14,7 @@ html(charset="utf8mb4")
 		.container-fluid
 			.row.justify-content-center
 				.col-md-4.col-xl-3.chat
-					.card.mb-sm-3.mb-md-0.contacts_card
+					.card.mb-sm-3.mb-md-0.contacts_card.card-contact
 						.card-header
 							h4.text-center Contacts
 						
@@ -32,15 +32,15 @@ html(charset="utf8mb4")
 												.user_info
 													span #{user.liker}
 						.card-footer
-				.col-md-1.col-xl-6.chat
-					.card#msgWrap
+				.col-md-1.col-md-3.chat
+					.card#msgWrap.card-chat
 						.card-header.msg_head
 							.d-flex.bd-highlight
 								.user_info
 									if !activeChat
-										span#ChatWith Select a Chat first:
+										span#ChatWith.text-center(style="color: black") Select a Chat first:
 									else
-										span#ChatWith Conversation with #{activeChat}
+										span#ChatWith.text-center(style="color: black") Conversation with #{activeChat}
 									
 						.card-body.msg_card_body#populateme
 									
@@ -60,8 +60,11 @@ html(charset="utf8mb4")
 	script(src="/chat.js")
 	if friendList.length == 0
 		script.
-			swal(
-				'No Matches',
-				'You need matches to chat to!',
-				'error'
-			)
+			swal({
+				title: 'No Matches',
+				text: `You need matches to chat to!`,
+				imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594042093/alerts/no_matches_atwilv.jpg',
+				imageWidth: 400,
+				imageHeight: 400,
+				imageAlt: 'Pass Change'
+			})

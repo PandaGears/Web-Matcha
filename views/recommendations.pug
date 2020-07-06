@@ -45,7 +45,7 @@ html
 								h6(style="color: white !important") Filter By:
 								hr
 								
-								input#minFame.form-control(type='text', placeholder='Minimum Popularity', name='fameMin')
+								input#minPop.form-control(type='text', placeholder='Minimum Popularity', name='fameMin')
 								small#fameHelpBlock.form-text.text-muted(style="color: white !important")
 									| Minimum Popularity level, 
 								br
@@ -86,10 +86,6 @@ html
 												p Popularity : #{val.fame}
 												p Age : #{val.userAge}
 												.row.mx-auto
-													button.btn.btn-success.w-50(value=val.username, onclick='likeUser(this.value)')
-														i.fa.fa-heart
-													button.btn.btn-danger.w-50(value=val.username, onclick='dislikeUser(this.value)')
-														i.fa.fa-thumbs-down
 							else
 								.grid-item
 									.card.text-black
@@ -107,7 +103,7 @@ html
 													|  Distance : unknown
 											else	
 												p
-													i.fa.fa-map-marker.mx-2.text-danger
+													i.fa.fa-compass.mx-2.text-danger
 													|  Distance : #{val.distance}km
 												p
 													i.fa.fa-trophy.mx-2.text-warning

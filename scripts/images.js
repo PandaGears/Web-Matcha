@@ -12,11 +12,14 @@ function deleteImage(value) {
             if (data === 'Success') {
                 location.reload();
             } else {
-                swal(
-                    'Error!',
-                    `Failed to delete image.`,
-                    'error'
-                )
+                swal({
+                    title: 'Error!',
+                    text: `Failed to delete image.`,
+                    imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+                    imageWidth: 400,
+                    imageHeight: 400,
+                    imageAlt: 'no delete',
+                })
             }
         }
     });
@@ -36,11 +39,14 @@ function setActiveImage(value) {
             if (data === 'Success') {
                 document.location.href = ('/user/account');
             } else {
-                swal(
-                    'Error!',
-                    `Failed to set image as active image.`,
-                    'error'
-                )
+                swal({
+                    title: 'Error!',
+                    text: `Failed to set image as active image.`,
+                    imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+                    imageWidth: 400,
+                    imageHeight: 400,
+                    imageAlt: 'bad interest',
+                })
             }
         }
     });

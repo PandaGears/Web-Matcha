@@ -39,11 +39,14 @@ function registrationValid(username, name, surname, email, password, confpasswor
 
 function registrationHandler(data) {
     if (data !== 'success') {
-        swal(
-            'Error!',
-            `Username already in use`,
-            'error'
-        )
+        swal({
+            title: 'Error!',
+            text: `Username already in use`,
+            imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt: 'already used',
+        })
     } else {
         window.location.href = "/postRegistration";
     }
@@ -70,20 +73,26 @@ function registerPost() {
                 if (ret == 'success') {
                     registrationHandler(ret);
                 } else {
-                    swal(
-                        'Error!',
-                        `${ret}`,
-                        'error'
-                    )
+                    swal({
+                        title: 'Error!',
+                        text: `${ret}`,
+                        imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+                        imageWidth: 400,
+                        imageHeight: 400,
+                        imageAlt: 'bad',
+                    })
                 }
             }
         })
     }, function(err) {
-        swal(
-            'Error!',
-            `${err}`,
-            'error'
-        )
+        swal({
+            title: 'Error!',
+            text: `${err}`,
+            imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt: 'bad',
+        })
     })
 }
 

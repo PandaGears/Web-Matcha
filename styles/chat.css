@@ -9,6 +9,16 @@
     border-radius: 50%, 50%, 50%, 50%;
 }
 
+.card-chat {
+    min-width: 700px;
+    max-width: 700px;
+}
+
+.card-contact {
+    min-width: 250px;
+    max-width: 300px;
+}
+
 .card {
     min-height: 700px;
     max-height: 700px;
@@ -269,6 +279,14 @@
 @media(max-width: 576px) {
     .contacts_card {
         margin-bottom: 15px !important;
+    }
+    .card-chat {
+        min-width: 300px;
+        max-width: 300px;
+    }
+    .card-contact {
+        min-width: 200px;
+        max-width: 200px;
     }
 }
 

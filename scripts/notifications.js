@@ -40,7 +40,7 @@ $(document).ready(function() {
                     $('#notifys').toast('show');
                 }
 
-                document.getElementById("Notif").innerHTML = data.messages + data.likes + data.views;
+                document.getElementById("NotifAll").innerHTML = data.messages + data.likes + data.views;
                 document.getElementById("NotifLike").innerHTML = data.likes;
                 document.getElementById("NotifMessage").innerHTML = data.messages;
                 document.getElementById("NotifView").innerHTML = data.views;

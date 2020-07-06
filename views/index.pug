@@ -26,47 +26,64 @@ html
 
 		if notification === 'valid'
 			script.
-				swal(
-					'Success!',
-					'Email confirmed, welcome to the club, Cub.',
-					'success'
-				)
-
+				swal({
+					title: 'Fully Validated!',
+					text: `Email confirmed, welcome to the club, Cub. Go to your profile to set up the rest`,
+					imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594032130/alerts/welcome_rhdvbx.jpg',
+					imageWidth: 400,
+					imageHeight: 400,
+					imageAlt: 'Welcome',
+				})
 		if notification === 'changed'
 			script.
-				swal(
-					'Success!',
-					'Password changed. Please log in again',
-					'success'
-				)
+				swal({
+					title: 'Changed!',
+					text: `Password changed. Please log in again`,
+					imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594032130/alerts/pass_change_kynl5j.jpg',
+					imageWidth: 400,
+					imageHeight: 400,
+					imageAlt: 'Pass Change',
+				})
 
 		if notification === 'invalid'
 			script.
-				swal(
-					'Invalid!',
-					'THIS IS A WRONG.',
-					'error'
-				)
+				swal({
+					title: 'Invalid!',
+					text: `Ya did something wrong, I dunno what it is though, but no`,
+					imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594031137/alerts/dislike_remove_dnz687.jpg',
+					imageWidth: 400,
+					imageHeight: 400,
+					imageAlt: 'Invalid',
+				})
 
 		if notification === 'emailed'
 			script.
-				swal(
-					title:	'Success!',
-					text:	'GO CHECK YER EMAILS.',
-					icon:	'success'
-				)
+				swal({
+					title:	'We sent a thing',
+					text:	`GO CHECK YER EMAILS.`,
+					imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594031139/alerts/email_sent_my4lt0.jpg',
+					imageWidth: 400,
+					imageHeight: 400,
+					imageAlt: 'Email sent',
+				})
 
 		if notification === 'incomplete'
 			script.
-				swal(
-					'Incomplete',
-					'HOW DID YA GET HERE!? GO FINISH YER REGISTRATION',
-					'error'
-				)
+				swal({
+					title: 'INCOMPLETE PROFILE',
+					text: `HOW DID YA GET HERE!? GO FINISH YER REGISTRATION`,
+					imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594032130/alerts/incomplete_profile_cnjno0.jpg',
+					imageWidth: 400,
+					imageHeight: 400,
+					imageAlt: 'Incomplete',
+				})
 		if notification === 'postRegistration'
 			script.
-				swal(
-					'Welcome!',
-					'Please confirm email and then login. :)',
-					'success'
-				)
+				swal({
+					title: 'Almost There!',
+					text: `Please confirm email and then login. :)`,
+					imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594032545/alerts/almost_there_xnnne4.jpg',
+					imageWidth: 400,
+					imageHeight: 400,
+					imageAlt: 'So close',
+				})

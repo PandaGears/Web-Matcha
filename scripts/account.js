@@ -1,3 +1,5 @@
+const { text } = require("body-parser");
+
 function postPublicDetails() {
     let form = {
         userName: document.getElementById('userName').value,
@@ -8,11 +10,14 @@ function postPublicDetails() {
     }
     if (form.userName && form.userSurname && form.userGender && form.userSexPref) {
         if (form.userGender !== 'Male' && form.userGender !== 'Female' && form.userGender !== 'NB') {
-            swal(
-                'Error!',
-                `Invalid gender... to the site at least`,
-                'error'
-            )
+            swal({
+                title: 'Error!',
+                text: `Invalid gender... to the site at least`,
+                imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+                imageWidth: 400,
+                imageHeight: 400,
+                imageAlt: 'invalid gender',
+            })
             setTimeout(() => {
                 swal.close();
             }, 3000);
@@ -36,20 +41,26 @@ function changeUsername() {
         userLogin: document.getElementById('userLogin').value
     }
     if (form.userLogin < 4) {
-        swal(
-            'Error!',
-            `Username must contain at least 4 characters.`,
-            'error'
-        )
+        swal({
+            title: 'Error!',
+            text: `Username must contain at least 4 characters.`,
+            imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt: 'short username',
+        })
         setTimeout(() => {
             swal.close();
         }, 3000);
     } else if (!form.userLogin) {
-        swal(
-            'Error!',
-            `Username can't be blank.`,
-            'error'
-        )
+        swal({
+            title: 'Error!',
+            text: `Username can't be blank.`,
+            imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt: 'blank username',
+        })
         setTimeout(() => {
             swal.close();
         }, 3000);
@@ -63,18 +74,24 @@ function changeUsername() {
             success: function(data) {
 
                 if (data === 'Success') {
-                    swal(
-                        'Success!',
-                        `Username has been updated!`,
-                        'success'
-                    )
+                    swal({
+                        title: 'Success!',
+                        text: `Username has been updated!`,
+                        imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594048146/alerts/good_ywbwx1.jpg',
+                        imageWidth: 400,
+                        imageHeight: 400,
+                        imageAlt: 'Username updated',
+                    })
                     location.reload();
                 } else {
-                    swal(
-                        'Error!',
-                        `${data}`,
-                        'error'
-                    )
+                    swal({
+                        title: 'Error!',
+                        test: `${data}`,
+                        imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+                        imageWidth: 400,
+                        imageHeight: 400,
+                        imageAlt: 'Nope',
+                    })
                     setTimeout(() => {
                         swal.close();
                     }, 3000);
@@ -90,20 +107,26 @@ function changeEmail() {
     }
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!(re.test(String(form.Email).toLowerCase()))) {
-        swal(
-            'Error!',
-            `Invalid email.`,
-            'error'
-        );
+        swal({
+            title: 'Error!',
+            text: `Invalid email.`,
+            imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt: 'bad email',
+        });
         setTimeout(() => {
             swal.close();
         }, 3000);
     } else if (!form.Email) {
-        swal(
-            'Error!',
-            `Email can't be blank.`,
-            'error'
-        )
+        swal({
+            title: 'Error!',
+            text: `Email can't be blank.`,
+            imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt: 'blank email',
+        })
         setTimeout(() => {
             swal.close();
         }, 3000);
@@ -126,11 +149,14 @@ function changeEmail() {
 
 function updateDoB() {
     if (!(document.getElementById('userDOB').value)) {
-        swal(
-            'Error!',
-            `Date input incomplete`,
-            'error'
-        )
+        swal({
+            title: 'Error!',
+            text: `Date input incomplete`,
+            imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt: 'bad date',
+        })
         setTimeout(() => {
             swal.close();
         }, 3000);
@@ -141,11 +167,14 @@ function updateDoB() {
     let ageDate = new Date(ageDifMs);
     var age = Math.abs(ageDate.getUTCFullYear() - 1970);
     if (age < 18) {
-        swal(
-            'Error!',
-            `Do you want me to call the murder-- I mean cops? TOO YOUNG.`,
-            'error'
-        )
+        swal({
+            title: 'Error!',
+            text: `little child... no, go away`,
+            imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594031136/alerts/2young_iopm4h.jpg',
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt: 'TOO YOUNG',
+        })
         setTimeout(() => {
             swal.close();
         }, 3000);
@@ -191,22 +220,28 @@ function changePassword() {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function(data) {
-                swal(
-                    'Updated!',
-                    `Your password has been updated.`,
-                    'success'
-                )
+                swal({
+                    title: 'Updated!',
+                    text: `Your password has been updated.`,
+                    imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594048146/alerts/good_ywbwx1.jpg',
+                    imageWidth: 400,
+                    imageHeight: 400,
+                    imageAlt: 'password updated',
+                })
                 setTimeout(() => {
                     swal.close();
                 }, 3000);
             }
         });
     }, (err) => {
-        swal(
-            'Error!',
-            `${err}`,
-            'error'
-        )
+        swal({
+            title: 'Error!',
+            text: `${err}`,
+            imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt: 'Nope',
+        })
     });
     $("#userNewPass").val("");
 }
@@ -224,11 +259,14 @@ function add_interest() {
     interests = interests.split(" ");
     interests.forEach(function(data) {
         if (!validInterest(data)) {
-            swal(
-                'Error!',
-                `${data} is not a correctly formatted interest, don't forget the '#'`,
-                'error'
-            )
+            swal({
+                title: 'Error!',
+                text: `${data} is not a correctly formatted interest, don't forget the '#'`,
+                imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+                imageWidth: 400,
+                imageHeight: 400,
+                imageAlt: 'bad interest',
+            })
             setTimeout(() => {
                 swal.close();
             }, 3000);
@@ -262,11 +300,14 @@ function remove_interest() {
     interests = interests.split(" ");
     interests.forEach(function(data) {
         if (!validInterest(data)) {
-            swal(
-                'Error!',
-                `${data} is not a correctly formatted interest, don't forget the '#'`,
-                'error'
-            )
+            swal({
+                title: 'Error!',
+                text: `${data} is not a correctly formatted interest, don't forget the '#'`,
+                imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+                imageWidth: 400,
+                imageHeight: 400,
+                imageAlt: 'bad interest',
+            })
             setTimeout(() => {
                 swal.close();
             }, 3000);

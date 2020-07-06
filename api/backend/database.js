@@ -128,7 +128,7 @@ class Database {
         })
     }
 
-    get_matches(userOrientation, userGender, username, userAge, ageDiff, minFame) {
+    get_matches(userOrientation, userGender, username, userAge, ageDiff, minPop) {
         return new Promise((resolve, reject) => {
             var ageMin = 0;
             var ageMax = 100;
@@ -136,8 +136,8 @@ class Database {
                 ageMin = userAge - +ageDiff;
                 ageMax = userAge + +ageDiff;
             }
-            if (!minFame)
-                minFame = 0;
+            if (!minPop)
+                minPop = 0;
             var sql;
             if (userOrientation == 'bi' || userOrientation == 'pan' || userOrientation == 'ace' || userOrientation == 'aro') {
                 if (userGender == "Female")
@@ -150,7 +150,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}
+                        popularity >= ${minPop}
                     OR
                         userOrientation = 'pan' 
                     AND 
@@ -160,7 +160,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}
+                        popularity >= ${minPop}
 					OR
                         userOrientation = 'hetero' 
                     AND 
@@ -172,7 +172,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}
+                        popularity >= ${minPop}
                     OR
                         userOrientation = 'homo' 
                     AND 
@@ -184,7 +184,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}
+                        popularity >= ${minPop}
 					OR
                         userOrientation = 'hetero' 
                     AND 
@@ -196,7 +196,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}
+                        popularity >= ${minPop}
 					OR
                         userOrientation = 'homo' 
                     AND 
@@ -208,7 +208,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}
+                        popularity >= ${minPop}
                     OR
                         userOrientation = 'aro' 
                     AND 
@@ -220,7 +220,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}					
+                        popularity >= ${minPop}					
                     OR
                         userOrientation = 'aro' 
                     AND 
@@ -232,7 +232,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}					
+                        popularity >= ${minPop}					
                     OR
                         userOrientation = 'aro' 
                     AND 
@@ -244,7 +244,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}
+                        popularity >= ${minPop}
                         OR
                         userOrientation = 'ace' 
                     AND 
@@ -256,7 +256,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}					
+                        popularity >= ${minPop}					
                     OR
                         userOrientation = 'ace' 
                     AND 
@@ -268,7 +268,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}					
+                        popularity >= ${minPop}					
                     OR
                         userOrientation = 'ace' 
                     AND 
@@ -280,7 +280,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}`;
+                        popularity >= ${minPop}`;
                 else if (userGender == "Male")
                     sql = `
 					SELECT * FROM users
@@ -293,7 +293,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity > ${minFame}
+                        popularity > ${minPop}
                     OR
                         userOrientation = 'pan' 
                     AND 
@@ -303,7 +303,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}
+                        popularity >= ${minPop}
 					OR
                         userOrientation = 'hetero' 
                     AND 
@@ -315,7 +315,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}
+                        popularity >= ${minPop}
                     OR
                         userOrientation = 'hetero' 
                     AND 
@@ -327,7 +327,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}
+                        popularity >= ${minPop}
                     OR
                         userOrientation = 'homo' 
                     AND 
@@ -339,7 +339,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}
+                        popularity >= ${minPop}
 					OR
                         userOrientation = 'homo' 
                     AND 
@@ -351,7 +351,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}
+                        popularity >= ${minPop}
                     OR
                         userOrientation = 'aro' 
                     AND 
@@ -363,7 +363,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}					
+                        popularity >= ${minPop}					
                     OR
                         userOrientation = 'aro' 
                     AND 
@@ -375,7 +375,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}					
+                        popularity >= ${minPop}					
                     OR
                         userOrientation = 'aro' 
                     AND 
@@ -387,7 +387,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}
+                        popularity >= ${minPop}
                     OR
                         userOrientation = 'ace' 
                     AND 
@@ -399,7 +399,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}					
+                        popularity >= ${minPop}					
                     OR
                         userOrientation = 'ace' 
                     AND 
@@ -411,7 +411,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}					
+                        popularity >= ${minPop}					
                     OR
                         userOrientation = 'ace' 
                     AND 
@@ -423,7 +423,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}`;
+                        popularity >= ${minPop}`;
                 else
                     sql = `
                     SELECT * FROM users
@@ -436,7 +436,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity > ${minFame}
+                        popularity > ${minPop}
                     OR
                         userOrientation = 'pan' 
                     AND 
@@ -446,7 +446,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}
+                        popularity >= ${minPop}
                     OR
                         userOrientation = 'homo' 
                     AND 
@@ -458,7 +458,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}
+                        popularity >= ${minPop}
                         OR
                         userOrientation = 'aro' 
                     AND 
@@ -470,7 +470,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}					
+                        popularity >= ${minPop}					
                     OR
                         userOrientation = 'aro' 
                     AND 
@@ -482,7 +482,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}					
+                        popularity >= ${minPop}					
                     OR
                         userOrientation = 'aro' 
                     AND 
@@ -494,7 +494,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}
+                        popularity >= ${minPop}
                     OR
                         userOrientation = 'ace' 
                     AND 
@@ -506,7 +506,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}					
+                        popularity >= ${minPop}					
                     OR
                         userOrientation = 'ace' 
                     AND 
@@ -518,7 +518,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}					
+                        popularity >= ${minPop}					
                     OR
                         userOrientation = 'ace' 
                     AND 
@@ -530,7 +530,7 @@ class Database {
                     AND 
                         userAge BETWEEN ${ageMin} AND ${ageMax} 
                     AND 
-                        popularity >= ${minFame}`;
+                        popularity >= ${minPop}`;
             } else if (userOrientation == 'hetero') {
                 if (userGender == 'Female')
                     sql = `
@@ -546,7 +546,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax}
                             AND 
-                                popularity >= ${minFame}
+                                popularity >= ${minPop}
                             OR
                                 userOrientation = 'pan'
                             AND 
@@ -558,7 +558,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax}
                             AND 
-                                popularity >= ${minFame}
+                                popularity >= ${minPop}
                             OR
                                 userOrientation = 'hetero'
                             AND 
@@ -570,7 +570,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ ageMax }
                             AND 
-                                popularity >= ${ minFame }
+                                popularity >= ${ minPop }
                             `
                 else if (userGender == 'Male')
                     sql = `
@@ -586,7 +586,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax}
                             AND 
-                                popularity >= ${minFame}
+                                popularity >= ${minPop}
                             OR
                                 userOrientation = 'pan'
                             AND 
@@ -598,7 +598,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax}
                             AND 
-                                popularity >= ${minFame}
+                                popularity >= ${minPop}
                             OR
                                 userOrientation = 'hetero'
                             AND 
@@ -610,7 +610,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax}
                             AND 
-                                popularity >= ${ minFame }
+                                popularity >= ${ minPop }
                             `
                 else
                     sql = `
@@ -626,7 +626,7 @@ class Database {
                         AND 
                             userAge BETWEEN ${ageMin} AND ${ageMax}
                         AND 
-                            popularity >= ${minFame}
+                            popularity >= ${minPop}
                         OR
                             userOrientation = 'bi'
                         AND 
@@ -638,7 +638,7 @@ class Database {
                         AND 
                             userAge BETWEEN ${ageMin} AND ${ageMax}
                         AND 
-                            popularity >= ${minFame}
+                            popularity >= ${minPop}
                         OR
                             userOrientation = 'pan'
                         AND 
@@ -650,7 +650,7 @@ class Database {
                         AND 
                             userAge BETWEEN ${ageMin} AND ${ageMax}
                         AND 
-                            popularity >= ${minFame}
+                            popularity >= ${minPop}
                         OR
                             userOrientation = 'pan'
                         AND 
@@ -662,7 +662,7 @@ class Database {
                         AND 
                             userAge BETWEEN ${ageMin} AND ${ageMax}
                         AND 
-                            popularity >= ${minFame}
+                            popularity >= ${minPop}
                         `
             } else if (userOrientation == 'homo') {
                 if (userGender == 'Female')
@@ -677,7 +677,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax}
                             AND 
-                                popularity >= ${ minFame }
+                                popularity >= ${ minPop }
                             OR
                                 userOrientation = 'pan'
                             AND 
@@ -687,7 +687,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax}
                             AND 
-                                popularity >= ${minFame}
+                                popularity >= ${minPop}
                             OR
                                 userOrientation = 'homo'
                             AND 
@@ -697,7 +697,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax}
                             AND 
-                                popularity >= ${minFame}
+                                popularity >= ${minPop}
                             OR
                                 userOrientation = 'aro' 
                             AND 
@@ -709,7 +709,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}					
+                                popularity >= ${minPop}					
                             OR
                                 userOrientation = 'aro' 
                             AND 
@@ -721,7 +721,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}					
+                                popularity >= ${minPop}					
                             OR
                                 userOrientation = 'aro' 
                             AND 
@@ -733,7 +733,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}
+                                popularity >= ${minPop}
                             OR
                                 userOrientation = 'ace' 
                             AND 
@@ -745,7 +745,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}					
+                                popularity >= ${minPop}					
                             OR
                                 userOrientation = 'ace' 
                             AND 
@@ -757,7 +757,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}					
+                                popularity >= ${minPop}					
                             OR
                                 userOrientation = 'ace' 
                             AND 
@@ -769,7 +769,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}`
+                                popularity >= ${minPop}`
                 else if (userGender == 'Male')
                     sql = `
                             SELECT * FROM users
@@ -782,7 +782,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax}
                             AND 
-                                popularity >= ${minFame}
+                                popularity >= ${minPop}
                             OR
                                 userOrientation = 'pan'
                             AND 
@@ -792,7 +792,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax}
                             AND 
-                                popularity >= ${minFame}
+                                popularity >= ${minPop}
                             OR
                                 userOrientation = 'homo'
                             AND 
@@ -802,7 +802,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax}
                             AND 
-                                popularity >= ${minFame}
+                                popularity >= ${minPop}
                                 OR
                                 userOrientation = 'aro' 
                             AND 
@@ -814,7 +814,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}					
+                                popularity >= ${minPop}					
                             OR
                                 userOrientation = 'aro' 
                             AND 
@@ -826,7 +826,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}					
+                                popularity >= ${minPop}					
                             OR
                                 userOrientation = 'aro' 
                             AND 
@@ -838,7 +838,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}
+                                popularity >= ${minPop}
                             OR
                                 userOrientation = 'ace' 
                             AND 
@@ -850,7 +850,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}					
+                                popularity >= ${minPop}					
                             OR
                                 userOrientation = 'ace' 
                             AND 
@@ -862,7 +862,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}					
+                                popularity >= ${minPop}					
                             OR
                                 userOrientation = 'ace' 
                             AND 
@@ -874,7 +874,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}`
+                                popularity >= ${minPop}`
                 else
                     sql = `
                             SELECT * FROM users
@@ -887,7 +887,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax}
                             AND 
-                                popularity >= ${minFame}
+                                popularity >= ${minPop}
                             OR
                                 userOrientation = 'bi'
                             AND 
@@ -897,7 +897,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax}
                             AND 
-                                popularity >= ${minFame}
+                                popularity >= ${minPop}
                             OR
                                 userOrientation = 'pan'
                             AND 
@@ -907,7 +907,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax}
                             AND 
-                                popularity >= ${minFame}
+                                popularity >= ${minPop}
                                 OR
                                 userOrientation = 'aro' 
                             AND 
@@ -919,7 +919,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}					
+                                popularity >= ${minPop}					
                             OR
                                 userOrientation = 'aro' 
                             AND 
@@ -931,7 +931,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}					
+                                popularity >= ${minPop}					
                             OR
                                 userOrientation = 'aro' 
                             AND 
@@ -943,7 +943,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}
+                                popularity >= ${minPop}
                             OR
                                 userOrientation = 'ace' 
                             AND 
@@ -955,7 +955,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}					
+                                popularity >= ${minPop}					
                             OR
                                 userOrientation = 'ace' 
                             AND 
@@ -967,7 +967,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}					
+                                popularity >= ${minPop}					
                             OR
                                 userOrientation = 'ace' 
                             AND 
@@ -979,7 +979,7 @@ class Database {
                             AND 
                                 userAge BETWEEN ${ageMin} AND ${ageMax} 
                             AND 
-                                popularity >= ${minFame}`
+                                popularity >= ${minPop}`
             }
             let result = this.query(sql);
             result.then(function(data) {

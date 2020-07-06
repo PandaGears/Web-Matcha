@@ -1,13 +1,13 @@
 function sendParams() {
     let form = {
         ageDiff: 100,
-        minFame: 0,
+        minPop: 0,
         maxDist: 100,
         sortType: 0,
         interest: 0
     }
     form.ageDiff = document.getElementById('ageDiff').value;
-    form.minFame = document.getElementById('minFame').value;
+    form.minPop = document.getElementById('minPop').value;
     form.maxDist = document.getElementById('DistanceDiff').value;
     form.interest = document.getElementById('userInterests').value;
     form.sortType = $('#radio input:radio:checked').val();

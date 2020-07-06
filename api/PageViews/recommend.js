@@ -45,7 +45,7 @@ router.get('/', (req, res, next) => {
 
             if (!userOrientation || !userGender)
                 res.redirect('/user/account/incomplete');
-            var userArray = DB.get_matches(userOrientation, userGender, req.session.user, userAge, req.session.ageDiff, req.session.minFame);
+            var userArray = DB.get_matches(userOrientation, userGender, req.session.user, userAge, req.session.ageDiff, req.session.minPop);
             userArray.then(function(data1) {
                 if (!data1[0])
                     arrayExists = 0;
@@ -163,10 +163,10 @@ router.post('/', (req, res) => {
         req.session.ageDiff = req.body.ageDiff;
     else
         req.session.ageDiff = undefined;
-    if (req.body.minFame)
-        req.session.minFame = req.body.minFame;
+    if (req.body.minPop)
+        req.session.minPop = req.body.minPop;
     else
-        req.session.minFame = undefined;
+        req.session.minPop = undefined;
     if (req.body.maxDist)
         req.session.maxDist = req.body.maxDist;
     else

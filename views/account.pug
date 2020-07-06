@@ -11,7 +11,7 @@ html
 			h1.mt-white.text-center.mt-5.display-3#heading Edit the Profile of #{username}
 
 		.container.mx-auto.my-3(style='max-width: 1200px;')
-			.card.mx-auto(style='max-width: 1200px;')
+			.card.mx-auto#darklight(style='max-width: 1200px;')
 				if imageExists
 					img.img-fluid.w-100(src=userImage, alt='User Image')
 				else
@@ -19,7 +19,7 @@ html
 				br
 				a#UpdateImg.btn.btn-success.btn-block.btn-lg.butt(href='/user/images') Change Image(s)
 
-				.card-body
+				.card-body#darklight
 					h4.card-title.text-center Public Details
 					hr
 					form#account(name="account", action='', method='POST' novalidate)
@@ -120,7 +120,7 @@ html
 									option(value="aro") Aromantic
 									option(value="ace") Asexual
 						hr
-						h4.card-title.text-center Bio
+						h4#darklight.card-title.text-center Bio
 						textarea#userBio(placeholder='Biography' name='userBio' form="account" rows='3').form-control= userBio
 
 						hr
@@ -134,7 +134,7 @@ html
 
 		if !age
 			.container.mx-auto.my-3(style='max-width: 1200px;')
-				.card.mx-auto(style='max-width: 1200px;')
+				.card.mx-auto#darklight(style='max-width: 1200px;')
 					.card-body.text-center
 						h4.card-title Date of Birth
 						hr
@@ -143,7 +143,7 @@ html
 						p#dobPara.text-success.pl-3
 
 		.container.mx-auto.my-3(style='max-width: 1200px;')
-			.card.mx-auto(style='max-width: 1200px;')
+			.card.mx-auto#darklight(style='max-width: 1200px;')
 				.card-body.text-center
 					h4.card-title Location
 					br
@@ -152,7 +152,7 @@ html
 					p#locPara.text-success.pl-3
 
 		.container.mx-auto.my-3(style='max-width: 1200px;')
-			.card.mx-auto(style='max-width: 1200px;')
+			.card.mx-auto#darklight(style='max-width: 1200px;')
 				.card-body.text-center
 					h4.card-title Add Interests
 					small#HelpBlock.form-text.text-muted
@@ -166,7 +166,7 @@ html
 					p#interestsPara.text-success.pl-3
 
 		.container.mx-auto.my-3(style='max-width: 1200px;')
-			.card.mx-auto(style='max-width: 1200px;')
+			.card.mx-auto#darklight(style='max-width: 1200px;')
 				.card-body.text-center
 					h4.card-title Remove Interests
 					small#HelpBlock.form-text.text-muted
@@ -180,7 +180,7 @@ html
 					p#interestsRemovedPara.text-success.pl-3
 
 		.container.mx-auto.my-3(style='max-width: 1200px;')
-			.card.mx-auto(style='max-width: 1200px;')
+			.card.mx-auto#darklight(style='max-width: 1200px;')
 				.card-body.text-center
 					h4.card-title Username
 					small#usernameHelpBlock.form-text.text-muted
@@ -192,7 +192,7 @@ html
 					p#unamePara.text-success.pl-3
 
 		.container.mx-auto.my-3(style='max-width: 1200px;')
-			.card.mx-auto(style='max-width: 1200px;')
+			.card.mx-auto#darklight(style='max-width: 1200px;')
 				.card-body.text-center
 					h4.card-title Email
 					br
@@ -202,7 +202,7 @@ html
 					p#emailPara.text-success.pl-3
 
 		.container.mx-auto.my-3(style='max-width: 1200px;')
-			.card.mx-auto(style='max-width: 1200px;')
+			.card.mx-auto#darklight(style='max-width: 1200px;')
 				.card-body.text-center
 					h4.card-title Password
 					small#passwordHelpBlock.form-text.text-muted

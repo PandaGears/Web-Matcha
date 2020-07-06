@@ -27,11 +27,14 @@ function resetPass(code) {
             }
         })
     }, (err) => {
-        swal(
-            'Error!',
-            `${err}`,
-            'error'
-        )
+        swal({
+            title: 'Error!',
+            text: `${err}`,
+            imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt: 'error',
+        })
     })
 }
 
@@ -48,19 +51,25 @@ function sendEmail() {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function(ret) {
-                swal(
-                    'Something Happened',
-                    `${ret}`,
-                    'info'
-                )
+                swal({
+                    title: 'Something Happened',
+                    text: `${ret}`,
+                    imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+                    imageWidth: 400,
+                    imageHeight: 400,
+                    imageAlt: 'something',
+                })
             }
         })
     }, function(err) {
-        swal(
-            'Error!',
-            `${err}`,
-            'error'
-        )
+        swal({
+            title: 'Error!',
+            text: `${err}`,
+            imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt: 'error',
+        })
     })
 }
 

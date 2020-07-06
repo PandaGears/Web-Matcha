@@ -22,7 +22,7 @@ nav.navbar.navbar-expand-lg.navbar-light.mbg-white.sticky-top
 				li.nav-item.dropdown
 					a#NotificationDropdown.nav-link.dropdown-toggle(style="cursor: pointer;", role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
 						i.fa.fa-bell-o
-						span#Notif.badge.badge-pill.badge-danger.mx-2
+						span#NotifAll.badge.badge-danger.mx-2
 					.dropdown-menu(aria-labelledby='NotificationDropdown')
 						a.dropdown-item(href='/notifications/likes') 
 							i.fa.fa-heart-o
@@ -46,9 +46,14 @@ nav.navbar.navbar-expand-lg.navbar-light.mbg-white.sticky-top
 								i.fa.fa-user-circle(aria-hidden='true')
 								|  My Profile 
 							.dropdown-divider
+							a#LogoutBtn.dropdown-item(onclick='darkmode()', onmouseover="", style="cursor: pointer;")
+								i.fa.fa-lightbulb-o
+								|  Dark/Light Mode 
+							.dropdown-divider
 							a#LogoutBtn.dropdown-item(onclick='logout()', onmouseover="", style="cursor: pointer;")
 								i.fa.fa-sign-out
 								|  Logout 
 
 script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
 script(src="/notifications.js")
+script(src="/navbar.js")
