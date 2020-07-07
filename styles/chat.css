@@ -11,18 +11,18 @@
 
 .card-chat {
     min-width: 500px;
-    max-width: 700px;
+    max-width: 700px !important;
 }
 
 .card-contact {
-    min-width: 250px;
+    min-width: 250px !important;
     max-width: 300px;
 }
 
 .card {
     min-height: 700px;
     max-height: 700px;
-    border-radius: 1px !important;
+    border-radius: 0 !important;
     background-color: rgba(255, 255, 255, 0.4) !important;
 }
 
@@ -54,6 +54,7 @@
     color: black !important;
     height: 60px !important;
     overflow-y: auto;
+    z-index: 1;
 }
 
 ::-webkit-input-placeholder {
@@ -268,12 +269,13 @@
     }
     .card-chat {
         min-width: 200px;
-        max-width: 300px;
+        max-width: 700px !important;
     }
     .card-contact {
         float: left;
         min-width: 200px;
         max-width: 350px;
+        margin: auto !important;
     }
 }
 

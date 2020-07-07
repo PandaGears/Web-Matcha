@@ -154,6 +154,11 @@ a.logreg:hover {
     border-color: #00a2ff !important;
 }
 
+.badge-danger .badge-danger :hover {
+    color: #fff;
+    background-color: #dc3545 !important;
+}
+
 @media screen and (max-width: 575.98px) {
     #heading {
         font-size: 2.5rem;
@@ -179,17 +184,20 @@ a.logreg:hover {
     background-color: #4d5257 !important;
     color: #a3a3a3 !important;
     border: none !important;
+    z-index: 5;
 }
 
 .toast-body {
     background-color: #414950 !important;
     color: #b4b4b4 !important;
     border: none !important;
+    z-index: 5;
 }
 
 .toast-link {
     color: #ffffff !important;
     font-weight: bolder;
+    z-index: 5;
 }
 
 .title {
