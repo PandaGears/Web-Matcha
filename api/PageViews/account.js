@@ -9,13 +9,13 @@ const cloudinaryStorage = require("multer-storage-cloudinary");
 var encrypt = require('../encrypt');
 
 cloudinary.config({
-    cloud_name: 'ddrrwygt',
+    cloud_name: 'ddrrwygt1',
     api_key: '997425764818684',
     api_secret: 's6FZ6ehgHhe4Rkhta6sMLGgfGr8'
 });
 const storage = cloudinaryStorage({
     cloudinary: cloudinary,
-    folder: "Moar Profiles",
+    folder: "userImages",
     allowedFormats: ["jpg", "png", "gif"],
     transformation: [{ width: 750, height: 750, crop: "limit" }]
 });

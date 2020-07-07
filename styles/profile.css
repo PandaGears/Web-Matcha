@@ -14,3 +14,13 @@
         font-size: 2vw;
     }
 }
+
+.profile-card {
+    background-color: #2e3338 !important;
+    color: #8b8b8b !important;
+    border: none;
+}
+
+.card {
+    border: none !important;
+}

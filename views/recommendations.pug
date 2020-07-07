@@ -74,7 +74,7 @@ html
 							if maxDistEntered
 								if (val.distance < maxDist)
 									.grid-item
-										.card.text-black
+										.card.recommend-card
 											a(href="/user/profile/"+val.username) 
 												img.card-img-top.img-fluid(src=val.userImage, alt='User Profile Image')
 											.card-body.mbg-light-grey
@@ -92,21 +92,21 @@ html
 									.text-center
 										a(href="/user/profile/"+val.username) 
 											img.card-img-top.img-fluid(src=val.userImage, alt='User Profile Image')
-										.card-body.mbg-light-grey
+										.card-body.recommend-card
 											h4.card-title.text-capitalize #{val.userFirstName} #{val.userLastName}
 											p
-												i.fa.fa-birthday-cake.mx-2
+												i.fa.fa-birthday-cake.mx-2.pink
 												|  Age : #{val.userAge}
 											if val.distance == 9999
 												p
-													i.fa.fa-map-marker.mx-2.text-danger
+													i.fa.fa-map-marker.mx-2.red
 													|  Distance : unknown
 											else	
 												p
-													i.fa.fa-compass.mx-2.text-danger
+													i.fa.fa-compass.mx-2.red
 													|  Distance : #{val.distance}km
 												p
-													i.fa.fa-trophy.mx-2.text-warning
+													i.fa.fa-trophy.mx-2.yellow
 													|  Likes : #{val.fame}
 			
 		include footer

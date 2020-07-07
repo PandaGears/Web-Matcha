@@ -1,19 +1,132 @@
 .dropdown-menu {
+    width: 100%;
+    border: none !important;
+    background-color: #343a40 !important;
+    color: #8b8b8b !important;
+}
+
+.dropdown-menu :hover {
+    border: none !important;
+    background-color: #363c42 !important;
+    color: #e6e6e6 !important;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #8b8b8b !important;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.toggler-btn {
+    border: none !important;
+}
+
+button:focus {
+    border: none !important;
+    outline: none !important;
+    outline-color: rgba(255, 255, 255, 0) !important;
+}
+
+.toggler-btn :active :focus {
+    border: none !important;
+    outline: none !important;
+    outline-color: rgba(255, 255, 255, 0) !important;
+}
+
+.aniburger {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    margin: 0px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    border: none !important;
+    outline: none !important;
+    outline-color: rgba(255, 255, 255, 0) !important;
+}
+
+.aniburger span {
+    display: block;
     position: absolute;
-    top: 100%;
+    height: 3px;
+    width: 100%;
+    border-radius: 9px;
+    opacity: 1;
     left: 0;
-    z-index: 1000;
-    display: none;
-    float: left;
-    min-width: 10rem !important;
-    padding: .5rem 0;
-    margin: .125rem 0 0;
-    font-size: 1rem;
-    color: #212529;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 4px solid rgba(0, 0, 0, .15);
-    border-radius: .25rem;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+    border: none !important;
+    outline: none !important;
+    outline-color: rgba(255, 255, 255, 0) !important;
+}
+
+.aniburger span {
+    background: #888888;
+}
+
+.aniburger span:nth-child(1) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.aniburger span:nth-child(2) {
+    top: 10px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.aniburger span:nth-child(3) {
+    top: 20px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.aniburger.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 0px;
+    left: 8px;
+}
+
+.aniburger.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+.aniburger.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 21px;
+    left: 8px;
 }

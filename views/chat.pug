@@ -50,8 +50,9 @@ html(charset="utf8mb4")
 											
 								input#messageBody.form-control.type_msg(type='textarea' placeholder='Type your message...')
 								.input-group-append
-									button#sendMsg.input-group-text.send_btn(type='button' onclick="sendMessage('"+activeChat+"');")
-										i.fa.fa-location-arrow(aria-hidden='true')
+									a#sendMsg.input-group-text.send_btn(type='button' onclick="sendMessage('"+activeChat+"');")
+										| SEND
+
 
 
 	include footer

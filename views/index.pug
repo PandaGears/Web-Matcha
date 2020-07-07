@@ -2,7 +2,6 @@ doctype html
 html
 	head
 		include global_stylesheets
-		link(rel='stylesheet', href='/colours.css')
 	body
 		include navbar
 
@@ -45,6 +44,17 @@ html
 					imageAlt: 'Pass Change',
 				})
 
+		if notification === 'postRegistration'
+			script.
+				swal({
+					title: 'Almost There!',
+					text: `Please confirm email and then login.`,
+					imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594032545/alerts/almost_there_xnnne4.jpg',
+					imageWidth: 400,
+					imageHeight: 400,
+					imageAlt: 'So close',
+				})
+
 		if notification === 'invalid'
 			script.
 				swal({
@@ -76,14 +86,4 @@ html
 					imageWidth: 400,
 					imageHeight: 400,
 					imageAlt: 'Incomplete',
-				})
-		if notification === 'postRegistration'
-			script.
-				swal({
-					title: 'Almost There!',
-					text: `Please confirm email and then login. :)`,
-					imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594032545/alerts/almost_there_xnnne4.jpg',
-					imageWidth: 400,
-					imageHeight: 400,
-					imageAlt: 'So close',
 				})

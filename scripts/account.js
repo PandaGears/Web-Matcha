@@ -17,10 +17,9 @@ function postPublicDetails() {
                 imageWidth: 400,
                 imageHeight: 400,
                 imageAlt: 'invalid gender',
+            }).then(function() {
+                window.location.reload();
             })
-            setTimeout(() => {
-                swal.close();
-            }, 3000);
         } else {
             $.ajax({
                 type: "POST",
@@ -48,10 +47,9 @@ function changeUsername() {
             imageWidth: 400,
             imageHeight: 400,
             imageAlt: 'short username',
+        }).then(function() {
+            window.location.reload();
         })
-        setTimeout(() => {
-            swal.close();
-        }, 3000);
     } else if (!form.userLogin) {
         swal({
             title: 'Error!',
@@ -60,10 +58,9 @@ function changeUsername() {
             imageWidth: 400,
             imageHeight: 400,
             imageAlt: 'blank username',
+        }).then(function() {
+            window.location.reload();
         })
-        setTimeout(() => {
-            swal.close();
-        }, 3000);
     } else {
         $.ajax({
             type: "POST",
@@ -81,8 +78,9 @@ function changeUsername() {
                         imageWidth: 400,
                         imageHeight: 400,
                         imageAlt: 'Username updated',
+                    }).then(function() {
+                        window.location.reload();
                     })
-                    location.reload();
                 } else {
                     swal({
                         title: 'Error!',
@@ -91,10 +89,9 @@ function changeUsername() {
                         imageWidth: 400,
                         imageHeight: 400,
                         imageAlt: 'Nope',
+                    }).then(function() {
+                        window.location.reload();
                     })
-                    setTimeout(() => {
-                        swal.close();
-                    }, 3000);
                 }
             }
         });
@@ -114,10 +111,9 @@ function changeEmail() {
             imageWidth: 400,
             imageHeight: 400,
             imageAlt: 'bad email',
-        });
-        setTimeout(() => {
-            swal.close();
-        }, 3000);
+        }).then(function() {
+            window.location.reload();
+        })
     } else if (!form.Email) {
         swal({
             title: 'Error!',
@@ -126,10 +122,9 @@ function changeEmail() {
             imageWidth: 400,
             imageHeight: 400,
             imageAlt: 'blank email',
+        }).then(function() {
+            window.location.reload();
         })
-        setTimeout(() => {
-            swal.close();
-        }, 3000);
     } else {
         $.ajax({
             type: "POST",
@@ -156,10 +151,9 @@ function updateDoB() {
             imageWidth: 400,
             imageHeight: 400,
             imageAlt: 'bad date',
+        }).then(function() {
+            window.location.reload();
         })
-        setTimeout(() => {
-            swal.close();
-        }, 3000);
         return;
     }
     var entered = new Date(document.getElementById('userDOB').value);
@@ -174,10 +168,9 @@ function updateDoB() {
             imageWidth: 400,
             imageHeight: 400,
             imageAlt: 'TOO YOUNG',
+        }).then(function() {
+            window.location.reload();
         })
-        setTimeout(() => {
-            swal.close();
-        }, 3000);
     } else {
         let form = {
             age: age,
@@ -227,10 +220,9 @@ function changePassword() {
                     imageWidth: 400,
                     imageHeight: 400,
                     imageAlt: 'password updated',
+                }).then(function() {
+                    window.location.reload();
                 })
-                setTimeout(() => {
-                    swal.close();
-                }, 3000);
             }
         });
     }, (err) => {
@@ -242,7 +234,9 @@ function changePassword() {
             imageHeight: 400,
             imageAlt: 'Nope',
         })
-    });
+    }).then(function() {
+        window.location.reload();
+    })
     $("#userNewPass").val("");
 }
 
@@ -266,10 +260,9 @@ function add_interest() {
                 imageWidth: 400,
                 imageHeight: 400,
                 imageAlt: 'bad interest',
+            }).then(function() {
+                window.location.reload();
             })
-            setTimeout(() => {
-                swal.close();
-            }, 3000);
             return;
         }
     });
@@ -307,10 +300,9 @@ function remove_interest() {
                 imageWidth: 400,
                 imageHeight: 400,
                 imageAlt: 'bad interest',
+            }).then(function() {
+                window.location.reload();
             })
-            setTimeout(() => {
-                swal.close();
-            }, 3000);
             return;
         }
     });

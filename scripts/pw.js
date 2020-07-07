@@ -54,7 +54,7 @@ function sendEmail() {
                 swal({
                     title: 'Something Happened',
                     text: `${ret}`,
-                    imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
+                    imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594031139/alerts/email_sent_my4lt0.jpg',
                     imageWidth: 400,
                     imageHeight: 400,
                     imageAlt: 'something',

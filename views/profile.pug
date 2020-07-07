@@ -31,7 +31,7 @@ html
 							span.carousel-control-next-icon(aria-hidden='true')
 							span.sr-only Next 
 	
-				.card-body
+				.card-body.profile-card
 					if !sameUser
 						if (!userIsOnline)
 							small#lastOnline
@@ -78,7 +78,7 @@ html
 						hr
 						h4.card-subtitle.mb-2
 							p(style="text-align: center")
-								i.fa.mx-2.fa-birthday-cake
+								i.fa.mx-2.fa-birthday-cake.pink
 								|  Age: #{userAge}
 						h4.card-subtitle.mb-2
 							p(style="text-align: center")
@@ -86,7 +86,7 @@ html
 								|  Likes: #{Likes}
 						h4.card-subtitle.mb-2
 							p(style="text-align: center")
-								i.fa.mx-2.fa-trophy.text-warning
+								i.fa.mx-2.fa-trophy.yellow
 								| Popularity: #{Popularity}
 					hr
 					
