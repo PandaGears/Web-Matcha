@@ -6,7 +6,6 @@ const mysql = require('mysql');
 
 app.set('view engine', 'pug');
 app.use(express.static('/../../styles'));
-app.use(express.static('/../../images'));
 app.use(express.static('/../../scripts'));
 
 var DB = new database;

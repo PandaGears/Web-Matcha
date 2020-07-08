@@ -4,7 +4,6 @@ const app = express();
 const database = require('../../api/backend/database');
 
 app.use(express.static('/../../styles'));
-app.use(express.static('/../../images'));
 app.use(express.static('/../../scripts'));
 
 var DB = new database;
