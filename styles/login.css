@@ -1,6 +1,6 @@
 input[type=text],
 input[type=password] {
-    width: 50%;
+    width: 60%;
     padding: 10px;
     margin: 0 auto;
     color: #8b8b8b !important;
@@ -10,7 +10,7 @@ input[type=password] {
 
 input[type=text] :active,
 input[type=password] :active {
-    width: 50%;
+    width: 60%;
     padding: 10px;
     margin: 0 auto;
     color: #8b8b8b !important;
@@ -20,6 +20,7 @@ input[type=password] :active {
 
 #error {
     color: red;
+    font-weight: bold;
 }
 
 .links {

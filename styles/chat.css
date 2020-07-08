@@ -263,6 +263,20 @@
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+@media(max-width: 767px) {
+    .contacts_card {
+        margin-bottom: 15px !important;
+    }
+    .card-chat {
+        min-width: 200px;
+        max-width: 700px !important;
+    }
+    .card-contact {
+        min-width: 200px;
+        max-width: 700px !important;
+    }
+}
+
 @media(max-width: 576px) {
     .contacts_card {
         margin-bottom: 15px !important;
@@ -272,10 +286,8 @@
         max-width: 700px !important;
     }
     .card-contact {
-        float: left;
         min-width: 200px;
-        max-width: 350px;
-        margin: auto !important;
+        max-width: 700px !important;
     }
 }
 

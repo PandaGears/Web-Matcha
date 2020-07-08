@@ -1,7 +1,7 @@
 input[type=text],
 input[type=password],
 input[type=email] {
-    width: 50%;
+    width: 60%;
     padding: 10px;
     margin: 0 auto;
     color: #8b8b8b !important;
@@ -12,7 +12,7 @@ input[type=email] {
 input[type=text] :active,
 input[type=password] :active,
 input[type=email] :active {
-    width: 50%;
+    width: 60%;
     padding: 10px;
     margin: 0 auto;
     color: #8b8b8b !important;

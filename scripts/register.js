@@ -52,7 +52,7 @@ function registrationHandler(data) {
     }
 }
 
-function registerPost() {
+function registerinator() {
     let form = {
         userLogin: document.getElementById('userLogin').value.toLowerCase(),
         userName: document.getElementById('userName').value,
@@ -108,6 +108,6 @@ $("input[type='text'], input[type='password'], input[type='email']").keyup((even
 
 $("#userConfPass").keyup(function(event) {
     if (event.keyCode === 13) {
-        registerPost();
+        registerinator();
     }
 });

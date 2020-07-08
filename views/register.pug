@@ -70,7 +70,7 @@ html
 										br 
 										a.links(href='/user/login') CLICK HERE TO LOGIN PLEASE
 									br
-									button#submit.btn.btn-info.btn-block.btn-lg.enableOnInput(type='button', value='Register', onclick='registerPost()', disabled='disabled') Register
+									button#submit.btn.btn-info.btn-block.btn-lg.enableOnInput(type='button', value='Register', onclick='registerinator()', disabled='disabled') Register
 								p#error.mt-3
 
 		include footer
@@ -79,10 +79,13 @@ html
 		script(src="/register.js")
 		if error === 'invalidForm'
 			script.
-				swal(
-					'Error!',
-					'Registration form was invalid',
-					'error'
-				)
+				swal({
+					title: 'Invalid!',
+					text: `Your registration was poopy`,
+					imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594031137/alerts/dislike_remove_dnz687.jpg',
+					imageWidth: 400,
+					imageHeight: 400,
+					imageAlt: 'Invalid',
+				})
 
 			
