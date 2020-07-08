@@ -12,7 +12,7 @@ function toRad(Value) {
     return Value * Math.PI / 180;
 }
 
-function appendDistance(user1, user2) {
+function socialDistance(user1, user2) {
     if (!user2.userLocationlat || !user2.userLocationlng)
         return (9999);
     var R = 6371;
@@ -50,7 +50,7 @@ router.get('/', (req, res, next) => {
                     arrayExists = 0;
                 else
                     data1.forEach(element => {
-                        element.distance = appendDistance(data[0], element);
+                        element.distance = socialDistance(data[0], element);
                         element.fame = element.Likes - element.userDislikes;
                     });
                 if (req.session.sortType) {

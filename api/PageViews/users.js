@@ -17,7 +17,7 @@ function toRad(Value) {
     return Value * Math.PI / 180;
 }
 
-function appendDistance(user1, user2) {
+function SocialDistancinator(user1, user2) {
     if (!user2.userLocationlat || !user2.userLocationlng)
         return (9999);
     var R = 6371;
@@ -118,7 +118,7 @@ router.get('/profile/:user?', (req, res, next) => {
                     interests.then(function(data1) {
                         let current_user = DB.query(`SELECT * FROM users WHERE username = '${req.session.user}'`);
                         current_user.then(function(data2) {
-                            data[0].distance = appendDistance(data2[0], data[0]);
+                            data[0].distance = SocialDistancinator(data2[0], data[0]);
                             let sql = "SELECT * FROM likes WHERE liker = ? AND liked = ?";
                             let inserts = [data[0].username, data2[0].username];
                             sql = mysql.format(sql, inserts);
@@ -212,6 +212,7 @@ router.get('/images', (req, res, next) => {
 
 router.get('/pass_reset/:code?', (req, res, next) => {
     if (req.session.user !== undefined) {
+        console.log("no");
         res.redirect('/');
         return;
     }
@@ -224,6 +225,7 @@ router.get('/pass_reset/:code?', (req, res, next) => {
                 user: (req.session.user === undefined ? "Username" : req.session.user)
             });
         }, function(err) {
+            console.log("nopes");
             res.redirect('/');
         })
     } else {

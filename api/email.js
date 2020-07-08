@@ -15,7 +15,7 @@ var passResetinator = function passResetinator(email, code) {
             from: 'noreply.matchastuffs@gmail.com',
             to: `${email}`,
             subject: 'Forgotten password',
-            html: `<p>okay... I lied a little</p><p><b>BECAUSE I AM JUDGING YOU SO HARD!!!!</b></p> <p>please follow this link to fix this:</p> <a href="http://localhost:8080/user/pass_reset/${code} style="color: red; font-size: 18px; text-decoration: none; font weight: bold">Je ne suis pas la relation </a>`
+            html: `<p>okay... I lied a little</p><p><b>BECAUSE I AM JUDGING YOU SO HARD!!!!</b></p> <p>please follow this link to fix this:</p>http://localhost:8080/user/pass_reset/${code}`
         };
         transporter.sendMail(mailOptions, function(error, info) {
             if (error)
@@ -35,7 +35,7 @@ var emailValidifinator = function emailValidifinator(email, code) {
             from: 'noreply.matchastuffs@gmail.com',
             to: `${email}`,
             subject: 'Please verify your email',
-            html: `<p>Greetings cub-to-be</p>verify here please...</br> <p><b>VERIFY IT!!!:</b></p></br> <a href="http://localhost:8080/${code}" style="color: red; font-size: 18px; text-decoration: none; font weight: bold">I AM THE VERIFICATION LINK</a>`
+            html: `<p>Greetings cub-to-be</p>verify here please...</br> <p><b>VERIFY IT!!!:</b></p></br> <a href="" style="color: red; font-size: 18px; text-decoration: none; font weight: bold">I AM THE VERIFICATION LINK</a>`
         };
 
         transporter.sendMail(mailOptions, function(error, info) {

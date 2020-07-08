@@ -1,11 +1,23 @@
-input[type=text], input[type=password], input[type=email] {
-	width: 100%;
-	padding: 15px;
-	margin: 5px 0 8px 0;
-	color: black;
-	background: #edf0f2;
+input[type=text],
+input[type=email] {
+    width: 60%;
+    padding: 10px;
+    margin: 0 auto;
+    color: #8b8b8b !important;
+    background: #4c5055 !important;
+    border: none;
+}
+
+input[type=text] :active,
+input[type=email] :active {
+    width: 60%;
+    padding: 10px;
+    margin: 0 auto;
+    color: #8b8b8b !important;
+    background: #4c5055 !important;
+    border: none;
 }
 
 .errorMsg {
-	color: red;
+    color: red;
 }

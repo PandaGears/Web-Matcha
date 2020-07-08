@@ -2,16 +2,20 @@ doctype html
 html
 	head
 		include global_stylesheets
-		link(rel='stylesheet', href='/pass_reset.css')
+		link(rel='stylesheet', href='/pwreset.css')
 		link(rel='stylesheet', href='/sweetalert2.css')
 	body
 		include navbar.pug
 
 		.container.mx-auto
 			h1.mt-white.text-center.mt-5.display-3#heading Hey... I aint Judgin'
-
-			.card.my-5.mx-auto(style='max-width:500px')
-				.card-body
+			br
+			br
+			br
+			br
+			br
+			.card.my-auto.mx-auto(style='max-width:500px')
+				.card-body.text-center.recommend-card
 					block content.text-center
 						h1 Reset Password
 						small#passwordHelpBlock.form-text.text-muted
