@@ -1,4 +1,4 @@
-function serverEmailValid(email) {
+function emailCheckinator(email) {
     return new Promise((resolve, reject) => {
         let emailTest = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (email === undefined || email == "")
@@ -42,7 +42,7 @@ function sendEmail() {
     let form = {
         userEmail: document.getElementById('userEmail').value,
     }
-    let valid = serverEmailValid(form.userEmail);
+    let valid = emailCheckinator(form.userEmail);
     valid.then(function(ret) {
         $.ajax({
             type: "POST",
@@ -52,7 +52,7 @@ function sendEmail() {
             dataType: "json",
             success: function(ret) {
                 swal({
-                    title: 'Something Happened',
+                    title: 'I did it...',
                     text: `${ret}`,
                     imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594031139/alerts/email_sent_my4lt0.jpg',
                     imageWidth: 400,
@@ -88,7 +88,7 @@ $("#userPassword").keyup(function(event) {
 $("input[type='email']").on("keyup", function() {
     $(".errorMsg").text("");
     $("#submit").prop("disabled", true);
-    serverEmailValid($('#userEmail').val()).then(() => {
+    emailCheckinator($('#userEmail').val()).then(() => {
         $("#submit").prop("disabled", false);
     }, (err) => {
         $('#emailError').text(err);

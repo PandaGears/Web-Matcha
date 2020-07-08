@@ -1,3 +1,12 @@
+input[type=text] {
+    width: 50%;
+    padding: 10px;
+    margin: 0 auto;
+    color: #8b8b8b !important;
+    background: #4c5055 !important;
+    border: none;
+}
+
 #SortBtn,
 #FilterBtn {
     width: 50%;
@@ -21,9 +30,9 @@
 }
 
 .funkyradio label {
-    width: 100%;
+    width: 50%;
     border-radius: 3px;
-    border: 1px solid #D1D3D4;
+    border: 1px solid #494949;
     font-weight: normal;
 }
 
@@ -66,7 +75,7 @@
 .funkyradio input[type="checkbox"]:hover:not(:checked)~label:before {
     content: '\2714';
     text-indent: .9em;
-    color: #C2C2C2;
+    color: #8b8b8b;
 }
 
 .funkyradio input[type="radio"]:checked~label,
@@ -102,7 +111,7 @@
 .funkyradio-success input[type="radio"]:checked~label:before,
 .funkyradio-success input[type="checkbox"]:checked~label:before {
     color: #fff;
-    background-color: #5cb85c;
+    background-color: #5c7cb8;
 }
 
 .funkyradio-danger input[type="radio"]:checked~label:before,

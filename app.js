@@ -10,7 +10,7 @@ const recommendRoutes = require('./api/pageViews/recommend');
 const locationRoutes = require('./api/pageViews/location');
 const notificationRoutes = require('./api/pageViews/notifications');
 const accountRoutes = require('./api/pageViews/account');
-const email_handler = require('./api/email');
+const emailinator = require('./api/email');
 
 app.use(session({
     key: 'user_sid',

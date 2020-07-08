@@ -11,7 +11,7 @@
         "type": "git",
         "url": "git+https://github.com/PandaGears/matcha.git"
     },
-    "author": "Tamara Radloff",
+    "author": "Tamara Radloff, Cameron Taljaard",
     "license": "ISC",
     "bugs": {},
     "dependencies": {

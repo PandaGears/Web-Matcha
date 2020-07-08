@@ -1,4 +1,4 @@
-function loginHandler(data) {
+function loginator(data) {
     if (data !== 'success') {
         swal({
             title: 'Error!',
@@ -25,7 +25,7 @@ function postLogin() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function(data) {
-            loginHandler(data);
+            loginator(data);
         }
     })
 }

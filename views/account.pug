@@ -17,7 +17,7 @@ html
 				else
 					img.img-fluid.w-100(src='https://res.cloudinary.com/ddrrwygt1/image/upload/v1591020994/images_rxeryf.png', alt='No Image Available')
 				br
-				a#UpdateImg.btn.btn-success.btn-block.btn-lg.butt(href='/user/images') Change Image(s)
+				a#UpdateImg.btn.btn-info.btn-block.btn-lg.butt(href='/user/images') Change Image(s)
 
 				.card-body.profile-card
 					h4.card-title.text-center Public Details
@@ -129,7 +129,7 @@ html
 							span.badge.badge-primary.mx-1(style="font-size: 2vw") #{val.interest}
 						hr
 
-						button#UpdateAcc.btn.btn-success.btn-block.btn-lg.butt(type='button', onclick='postPublicDetails()', value='account') Update Profile
+						button#UpdateAcc.btn.btn-info.btn-block.btn-lg.butt(type='button', onclick='postPublicDetails()', value='account') Update Profile
 						p#deetsPara.text-success.pl-3
 
 		if !age
@@ -139,7 +139,7 @@ html
 						h4.card-title Date of Birth
 						hr
 						input#userDOB.form-control(type="date" name="DOB")
-						button#UpdateDOB.butt.btn.btn-success.btn-block.btn-lg(type='button', onclick='updateDoB()', value='dob') Set Date of Birth
+						button#UpdateDOB.butt.btn.btn-info.btn-block.btn-block.btn-lg(type='button', onclick='updateDoB()', value='dob') Set Date of Birth
 						p#dobPara.text-success.pl-3
 
 		.container.mx-auto.my-3(style='max-width: 1200px;')
@@ -161,7 +161,7 @@ html
 					form#addInterests(name="interests", action='', method='POST' novalidate, onsubmit='return false')
 						input#userInterests.form-control(type='text' placeholder='Interests' name='userInterests' style="width: 300px")
 						br
-						button#AddInterest.btn.btn-success.btn-block.btn-lg.butt(type='button', onclick='add_interest()' value='interests') Update Interests
+						button#AddInterest.btn.btn-info.btn-block.btn-lg.butt(type='button', onclick='gaininterest()' value='interests') Add Interest(s)
 					p#interestAError
 					p#interestsPara.text-success.pl-3
 
@@ -175,7 +175,7 @@ html
 					form#removeInterests(name="interests", action='', method='POST' novalidate, onsubmit='return false')
 						input#removedInterests.form-control(type='text' placeholder='Interests' name='userInterests' style="width: 300px")
 						br
-						button#RemoveInterest.btn.btn-success.btn-block.btn-lg.butt(type='button', onclick='remove_interest()' value='interests') Update Interests
+						button#RemoveInterest.btn.btn-info.btn-block.btn-lg.butt(type='button', onclick='loseinterest()' value='interests') Remove Interest(s)
 					p#interestRError
 					p#interestsRemovedPara.text-success.pl-3
 
@@ -188,17 +188,19 @@ html
 					br
 					input#userLogin.form-control(type='text' placeholder='Username' name='userLogin' value=username style="width: 300px")
 					br
-					button#updateUsername.btn.btn-success.btn-block.btn-lg.butt(type='button', onclick='changeUsername()', value='username') Update Username
+					button#updateUsername.btn.btn-info.btn-block.btn-lg.butt(type='button', onclick='changeUsername()', value='username') Update Username
 					p#unamePara.text-success.pl-3
 
 		.container.mx-auto.my-3(style='max-width: 1200px;')
 			.card.mx-auto.profile-card(style='max-width: 1200px;')
 				.card-body.text-center
 					h4.card-title Email
+					small#HelpBlock.form-text.text-muted
+						| I trust you know the format of an email? considering that... well... You are here
 					br
 					input#Email.form-control(type='email' placeholder='Email' name='Email' value=Email style="width: 300px")
 					br
-					button#updateEmail.btn.btn-success.btn-block.btn-lg.butt(type='button', onclick='changeEmail()', value='email') Update Email
+					button#updateEmail.btn.btn-info.btn-block.btn-lg.butt(type='button', onclick='changeEmail()', value='email') Update Email
 					p#emailPara.text-success.pl-3
 
 		.container.mx-auto.my-3(style='max-width: 1200px;')
@@ -206,12 +208,12 @@ html
 				.card-body.text-center
 					h4.card-title Password
 					small#passwordHelpBlock.form-text.text-muted
-						| Your password must be 8 characters long and contain letters and numbers. It must not contain spaces, special characters, or emojis.
+						| Your password must be 8 characters long and contain letters and numbers. If I see anything else... Well... nothing is going to happen, much like your password
 					br
 					label(for='pass') New Password
 					input#userNewPass.form-control(type='password' placeholder='New Password' name='userNewPass' style="width: 300px")
 					br
-					button#updatePassword.btn.btn-success.btn-block.btn-lg.butt(type='button', onclick='changePassword()', name='password', disabled='true') Update Password
+					button#updatePassword.btn.btn-info.btn-block.btn-lg.butt(type='button', onclick='changePassword()', name='password', disabled='true') Update Password
 					p#pwPara.text-success.pl-3
 					p#pwParaE.text-danger.pl-3
 			

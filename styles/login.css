@@ -1,11 +1,33 @@
-input[type=text], input[type=password] {
-	width: 100%;
-	padding: 15px;
-	margin: 5px 0 8px 0;
-	color: black;
-	background: #edf0f2;
+input[type=text],
+input[type=password] {
+    width: 50%;
+    padding: 10px;
+    margin: 0 auto;
+    color: #8b8b8b !important;
+    background: #4c5055 !important;
+    border: none;
+}
+
+input[type=text] :active,
+input[type=password] :active {
+    width: 50%;
+    padding: 10px;
+    margin: 0 auto;
+    color: #8b8b8b !important;
+    background: #4c5055 !important;
+    border: none;
 }
 
 #error {
-	color: red;
+    color: red;
+}
+
+.links {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.links:hover {
+    text-decoration: none;
+    font-weight: bold;
 }

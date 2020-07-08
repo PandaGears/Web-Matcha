@@ -1,4 +1,4 @@
-function setActive(id) {
+function chatActivinator(id) {
     var elements = document.getElementsByClassName("active_chat");
     if (elements)
         var element = elements[0];
@@ -22,7 +22,7 @@ function setActive(id) {
     });
 }
 
-function sendMessage(id) {
+function messenger(id) {
     let form = {
         to: id,
         message: document.getElementById("messageBody").value

@@ -1,4 +1,4 @@
-function hasSpecial(string) {
+function Specialfinder(string) {
     var regex = /^[A-Za-z0-9-_. ]+$/
     var isValid = regex.test(string);
 
@@ -10,13 +10,13 @@ function emailValid(email) {
     return re.test(String(email).toLowerCase());
 }
 
-function loginFormValid(username, password) {
+function loginValidifierinator(username, password) {
     if (!username || !password)
         return (false);
     return (true);
 }
 
-function registrationFormValid(username, name, surname, email, password, confpassword) {
+function Validifierinator(username, name, surname, email, password, confpassword) {
     if (!username || !name || !surname || !email || !password || !confpassword)
         return (false);
     if (password !== confpassword)
@@ -25,10 +25,10 @@ function registrationFormValid(username, name, surname, email, password, confpas
         return (false);
     if (username.length < 4)
         return (false);
-    if (!hasSpecial(username))
+    if (!Specialfinder(username))
         return (false);
     return (true);
 }
 
-module.exports.registrationFormValid = registrationFormValid;
-module.exports.loginFormValid = loginFormValid;
+module.exports.Validifierinator = Validifierinator;
+module.exports.loginValidifierinator = loginValidifierinator;

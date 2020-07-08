@@ -9,29 +9,25 @@ function postPublicDetails() {
         userBio: document.getElementById('userBio').value,
     }
     if (form.userName && form.userSurname && form.userGender && form.userSexPref) {
-        if (form.userGender !== 'Male' && form.userGender !== 'Female' && form.userGender !== 'NB') {
-            swal({
-                title: 'Error!',
-                text: `Invalid gender... to the site at least`,
-                imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
-                imageWidth: 400,
-                imageHeight: 400,
-                imageAlt: 'invalid gender',
-            }).then(function() {
-                window.location.reload();
-            })
-        } else {
-            $.ajax({
-                type: "POST",
-                url: '/user/account/public',
-                data: JSON.stringify(form),
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function(data) {
-                    location.reload();
-                }
-            });
-        }
+        $.ajax({
+            type: "POST",
+            url: '/user/account/public',
+            data: JSON.stringify(form),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(data) {
+                swal({
+                    title: 'Yaaaas!',
+                    text: `Your deets have been updated`,
+                    imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594048146/alerts/good_ywbwx1.jpg',
+                    imageWidth: 400,
+                    imageHeight: 400,
+                    imageAlt: 'profile is changed',
+                }).then(function() {
+                    window.location.reload();
+                })
+            }
+        });
     }
 }
 
@@ -53,7 +49,7 @@ function changeUsername() {
     } else if (!form.userLogin) {
         swal({
             title: 'Error!',
-            text: `Username can't be blank.`,
+            text: `NO BLANK USERNAMES PLS`,
             imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
             imageWidth: 400,
             imageHeight: 400,
@@ -160,7 +156,7 @@ function updateDoB() {
     let ageDifMs = Date.now() - entered.getTime();
     let ageDate = new Date(ageDifMs);
     var age = Math.abs(ageDate.getUTCFullYear() - 1970);
-    if (age < 18) {
+    if (age < 16) {
         swal({
             title: 'Error!',
             text: `little child... no, go away`,
@@ -247,7 +243,7 @@ function validInterest(interest) {
     return false;
 }
 
-function add_interest() {
+function gaininterest() {
     var interests = document.getElementById('userInterests').value;
 
     interests = interests.split(" ");
@@ -280,14 +276,14 @@ function add_interest() {
             });
         }
     });
-    document.getElementById("interestsPara").innerHTML = "Updated your interests";
+    document.getElementById("interestsPara").innerHTML = "Interests have been added!";
     setTimeout(() => {
         $('#interestsPara').text('');
     }, 2000);
     $('#userInterests').val('');
 }
 
-function remove_interest() {
+function loseinterest() {
     var interests = document.getElementById('removedInterests').value;
 
     interests = interests.split(" ");
@@ -320,7 +316,7 @@ function remove_interest() {
             });
         }
     });
-    document.getElementById("interestsRemovedPara").innerHTML = "Removed any matching interests";
+    document.getElementById("interestsRemovedPara").innerHTML = "Removed the appropriate interests";
     setTimeout(() => {
         $('#interestsRemovedPara').text('');
     }, 2000);
@@ -329,13 +325,13 @@ function remove_interest() {
 
 $("#userInterests").keyup(function(event) {
     if (event.keyCode === 13) {
-        add_interest();
+        gaininterest();
     }
 });
 
 $("#removedInterests").keyup(function(event) {
     if (event.keyCode === 13) {
-        remove_interest();
+        loseinterest();
     }
 });
 

@@ -15,6 +15,10 @@ body {
     overflow-x: hidden;
 }
 
+h1 {
+    color: #a7a7a7;
+}
+
 .foot {
     position: absolute;
     right: 0;
@@ -26,12 +30,13 @@ body {
 }
 
 .links {
-    color: red;
+    color: rgb(177, 177, 177);
+    ;
     text-decoration: none;
 }
 
 .links:hover {
-    color: rgb(187, 0, 0);
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 

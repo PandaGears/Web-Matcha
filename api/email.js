@@ -4,12 +4,29 @@ const mysql = require('mysql');
 var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: 'noreply.matchawtc@gmail.com',
+        user: 'noreply.matchaWTC@gmail.com',
         pass: 'CaVJdFLYePnA9GLdrMsJ'
     }
 });
 
-var confirm_email = function confirm_email(email, code) {
+var passResetinator = function passResetinator(email, code) {
+    return new Promise((resolve, reject) => {
+        var mailOptions = {
+            from: 'noreply.matchastuffs@gmail.com',
+            to: `${email}`,
+            subject: 'Forgotten password',
+            html: `<p>okay... I lied a little</p><p><b>BECAUSE I AM JUDGING YOU SO HARD!!!!</b></p> <p>please follow this link to fix this:</p> <a href="http://localhost:8080/user/pass_reset/${code} style="color: red; font-size: 18px; text-decoration: none; font weight: bold">Je ne suis pas la relation </a>`
+        };
+        transporter.sendMail(mailOptions, function(error, info) {
+            if (error)
+                reject(error);
+            else
+                resolve(info.response);
+        });
+    })
+}
+
+var emailValidifinator = function emailValidifinator(email, code) {
     return new Promise((resolve, reject) => {
         if (!email || email == undefined)
             reject("No valid email given.");
@@ -18,7 +35,7 @@ var confirm_email = function confirm_email(email, code) {
             from: 'noreply.matchastuffs@gmail.com',
             to: `${email}`,
             subject: 'Please verify your email',
-            text: `verify here... VERIFY: http://localhost:8080/${code}`
+            html: `<p>Greetings cub-to-be</p>verify here please...</br> <p><b>VERIFY IT!!!:</b></p></br> <a href="http://localhost:8080/${code}" style="color: red; font-size: 18px; text-decoration: none; font weight: bold">I AM THE VERIFICATION LINK</a>`
         };
 
         transporter.sendMail(mailOptions, function(error, info) {
@@ -30,22 +47,6 @@ var confirm_email = function confirm_email(email, code) {
     });
 }
 
-var reset_password = function reset_password(email, code) {
-    return new Promise((resolve, reject) => {
-        var mailOptions = {
-            from: 'noreply.matchastuffs@gmail.com',
-            to: `${email}`,
-            subject: 'Forgotten password',
-            text: `I AM JUDGING YOU SO HARD, please follow this link to fix: http://localhost:8080/user/pass_reset/${code}`
-        };
-        transporter.sendMail(mailOptions, function(error, info) {
-            if (error)
-                reject(error);
-            else
-                resolve(info.response);
-        });
-    })
-}
 
-module.exports.confirm_email = confirm_email;
-module.exports.reset_password = reset_password;
+module.exports.emailValidifinator = emailValidifinator;
+module.exports.passResetinator = passResetinator;

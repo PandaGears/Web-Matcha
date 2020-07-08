@@ -45,10 +45,10 @@ function registrationHandler(data) {
             imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594047930/alerts/bad_ehbqfc.jpg',
             imageWidth: 400,
             imageHeight: 400,
-            imageAlt: 'already used',
+            imageAlt: 'already used'
         })
     } else {
-        window.location.href = "/postRegistration";
+        window.location.href = "login/postRegistered";
     }
 }
 

@@ -8,26 +8,37 @@ html
 		
 		h1.text-center.my-3.mt-white.display-3#heading Profile Likes
 		.container(style='max-width: 900px;min-width:360px;')
-			.card
+			.card.recommend-card
 				h4.mx-auto.mt-2 Your Notifications:
 				hr
 				each val in userList
-					.card-body
+					.card-body.recommend-card
 						if val.type == 1
 							.row.mx-auto
 								p
-									i.fa.fa-user.mx-2.text-secondary
-									a(href='/user/profile/'+val.liker) #{val.liker}
+									i.fa.fa-user-o.mx-2.text-secondary
+									a.toast-link(href='/user/profile/'+val.liker) #{val.liker}
 									|  liked your profile, yaaaaaaay 
-									i.fa.fa-heart
+									i.fa.fa-heart.red
 						else
 							.row.mx-auto
 								p
-									i.fa.fa-user.mx-2.text-secondary
-									a(href='/user/profile/'+val.liker) #{val.liker}
+									i.fa.fa-user-o.mx-2.text-secondary
+									a.toast-link(href='/user/profile/'+val.liker) #{val.liker}
 									|  disliked your profile, feels bad man
-									i.fa.fa-heart-broken
+									i.fa.fa-heart-broken.red
 
 	include footer
 	
 	include global_scripts
+
+			if notification === 'postRegistered'
+			script.
+				swal({
+					title: 'Almost There!',
+					text: `Please confirm email and then login.`,
+					imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594032545/alerts/almost_there_xnnne4.jpg',
+					imageWidth: 400,
+					imageHeight: 400,
+					imageAlt: 'So close',
+				})

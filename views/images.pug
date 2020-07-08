@@ -1,13 +1,14 @@
 html
 	head
 		include global_stylesheets
-		link(rel='stylesheet', href='/images.css')
+		link(rel='stylesheet', href='/editprofile.css')
 	body
 		include navbar.pug
 		
 		h2.mt-white.text-center.mt-5.display-3#heading Edit Images
+		br
 		.container(style='max-width: 700px;')
-			.card
+			.card.recommend-card.text-center
 				.col
 					h3.mx-auto.mt-2 Select an image to upload:
 					small.text-muted
@@ -17,14 +18,22 @@ html
 						form#account(name="images", action='/user/account/images', method='POST', enctype="multipart/form-data")
 							input#profileImg.custom-file-input(type="file", name='image', accept="image/*")
 							label.custom-file-label.mx-auto(for='profileImg') Choose File
-							button#submit.btn.btn-success.btn-block.mx-auto.my-2(type='submit') Upload
+							br
+							br
+							button#submit.butt.btn.btn-info.btn-block.btn-block.btn-lg(type='submit') Upload
 					each value in imageArray
+						br
+						br
 						hr
+						br
+						br
 						.container.mx-auto.my-3(style='max-width: 700px;')
 							img.img-fluid.w-100.mx-auto(src=value, alt='User Image')
-							button.btn.btn-lg.btn-success.mt-2.mx-2(value=value, onclick='setActiveImage(this.value)') Set as Active
-							button.btn.btn-lg.btn-danger.mt-2.mx-2(value=value, onclick='deleteImage(this.value)')
-								i.fa.fa-trash
+							br
+							br
+							button.butt.btn.btn-info.btn-block.btn-block.btn-lg(value=value, onclick='setActiveImage(this.value)') Set Profile?
+							button.butt.btn.btn-danger.btn-block.btn-lg(value=value, onclick='deleteImage(this.value)') Delete Image? 
+								i.fa.fa-trash-o
 				br
 
 		include footer

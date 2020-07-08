@@ -1,25 +1,64 @@
 input[type=text],
 input[type=password],
-input[type=email] {
-    width: 100%;
+input[type=email],
+input[type=file] {
+    width: 50%;
     padding: 10px;
     margin: 0 auto;
-    color: black;
+    color: #8b8b8b !important;
+    background: #4c5055 !important;
+    border: none;
+}
+
+.custom-file-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #8b8b8b !important;
+    background: #4c5055 !important;
+    border: none;
+    border-radius: .25rem;
+}
+
+.custom-file-label::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    display: block;
+    height: calc(1.5em + .75rem);
+    padding: .375rem .75rem;
+    line-height: 1.5;
+    color: #495057;
+    content: "Browse";
+    color: #b4b4b4 !important;
+    background: #6b6f74 !important;
+    border: none;
+    border-radius: .15rem;
 }
 
 input[type=date] {
-    padding: 15px;
-    margin: 5px 0 8px 0;
-    color: black;
+    padding: 10px;
+    margin: 0 auto;
+    color: #8b8b8b !important;
+    background: #4c5055 !important;
+    border: none;
 }
 
 textarea {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 12px 0;
+    width: 50%;
+    padding: 10px;
+    margin: 0 auto;
+    color: #8b8b8b !important;
+    background: #404447 !important;
     border: none;
-    color: black;
-    background: #edf0f2;
 }
 
 .butt {
@@ -29,4 +68,10 @@ textarea {
 .profile-card {
     background-color: #2e3338 !important;
     color: #8b8b8b !important;
+}
+
+.btn-blocker {
+    display: block;
+    width: 40% !important;
+    margin: auto;
 }

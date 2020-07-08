@@ -12,11 +12,12 @@ html
 			h1.text-center.mt-white.mt-5.display-3 Welcome!
 			.row
 				.col
-					.card.my-5.mx-auto(style='max-width:500px')
-						.card-body
+					.card.recommend-card.my-5.mx-auto(style='max-width:500px')
+						.card-header.text-center
 							block content
 								h1 Login
 								hr
+							.card-body.text-center
 								form#login.needs-validation(name="login", action='', method='POST' novalidate)
 									.form-group
 										label(for='userName') Username:
@@ -26,16 +27,16 @@ html
 										label(for='password') Password:
 										input#userPass.form-control(type='password' placeholder='Enter Password' name='userPass' required)
 									
-									p
+									p.text-center
 										| Not from around these parts?
 										br
-										a(href='/user/register') Register Here
-									p
+										a.links(href='/user/register') Register Here
+									p.text-center
 										| Forgot your own password? (nobody judging here)
-										br
-										a(href='/user/pass_reset') Reset Password Here
+										br 
+										a.links(href='/user/pass_reset') Reset Password Here
 
-									button#submit.btn.btn-success.btn-block.btn-lg.enableOnInput(type='button', value='Login', onclick='postLogin()', disabled='disabled') Login
+									button#submit.btn.btn-info.btn-block.btn-lg.enableOnInput(type='button', value='Login', onclick='postLogin()', disabled='disabled') Login
 								
 		
 		include footer
@@ -43,5 +44,14 @@ html
 
 		script(src="/login.js")
 		
-
+		if error === 'postRegistered'
+			script.
+				swal({
+					title: 'Almost There!',
+					text: `Please confirm your email and then you can login.`,
+					imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594032545/alerts/almost_there_xnnne4.jpg',
+					imageWidth: 400,
+					imageHeight: 400,
+					imageAlt: 'So close',
+				})
 

@@ -48,7 +48,7 @@ function initMap() {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function() {
-                document.getElementById('locPara').innerHTML = 'Your location has been updated!';
+                document.getElementById('locPara').innerHTML = 'You have a place in the world!';
                 setTimeout(() => {
                     $('#locPara').text('');
                 }, 3000);

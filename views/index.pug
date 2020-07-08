@@ -33,7 +33,7 @@ html
 					imageHeight: 400,
 					imageAlt: 'Welcome',
 				})
-		if notification === 'changed'
+		else if notification === 'changed'
 			script.
 				swal({
 					title: 'Changed!',
@@ -44,18 +44,7 @@ html
 					imageAlt: 'Pass Change',
 				})
 
-		if notification === 'postRegistration'
-			script.
-				swal({
-					title: 'Almost There!',
-					text: `Please confirm email and then login.`,
-					imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594032545/alerts/almost_there_xnnne4.jpg',
-					imageWidth: 400,
-					imageHeight: 400,
-					imageAlt: 'So close',
-				})
-
-		if notification === 'invalid'
+		else if notification === 'invalid'
 			script.
 				swal({
 					title: 'Invalid!',
@@ -66,7 +55,7 @@ html
 					imageAlt: 'Invalid',
 				})
 
-		if notification === 'emailed'
+		else if notification === 'emailed'
 			script.
 				swal({
 					title:	'We sent a thing',
@@ -77,7 +66,7 @@ html
 					imageAlt: 'Email sent',
 				})
 
-		if notification === 'incomplete'
+		else if notification === 'incomplete'
 			script.
 				swal({
 					title: 'INCOMPLETE PROFILE',

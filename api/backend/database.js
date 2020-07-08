@@ -31,7 +31,7 @@ class Database {
         valid_user.then(function(data) {
             let user = a.get_user(username);
             user.then(function(data) {
-                let confirmation = email_handler.confirm_email(data[0].userEmail, data[0].userCode);
+                let confirmation = email_handler.emailValidifinator(data[0].userEmail, data[0].userCode);
                 confirmation.then(function(ret) {}, function(err) {
 
                 })

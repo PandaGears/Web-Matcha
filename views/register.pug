@@ -7,19 +7,21 @@ html
 	body
 		include navbar.pug
 		.container.mx-auto
-			h1.text-center.mt-white.mt-5.display-3#heading LET THE RITUAL BEGIN
+			h1.text-center.mt-white.mt-3.display-3#heading LET THE RITUAL BEGIN
 			.row
 				.col
-					.card.my-5.mx-auto(style='max-width:500px')
-						.card-body
+					.card.recommend-card.my-5.mx-auto(style='max-width:500px')
+						.card-header.text-center
 							block content
-								h1 Fill deet... FILL EM
+								h1 Fill deets... FILL EM
 								
 								small#HelpBlock.form-text.text-muted
-									| Fields marked with an asterisk are required.... What? "it's everything?" take a hint
+									p Fields marked with an asterisk are required.... 
+									| What? "it's everything?" take a hint then
 								hr
+							.card-body.text-center
 								form#register(name="register", action='', method='POST' novalidate)
-									.form-group
+									.form-group.text-center
 										a.req * 
 										label(for='userName') Username:
 										input#userLogin.form-control(type='text' placeholder='Enter Username' name='userLogin' autofocus required)
@@ -27,35 +29,35 @@ html
 											| All usernames will be forced to lower case.
 										p#userNameError.errorMsg
 
-									.form-group
-										.form-group
+									.form-group.text-center
+										.form-group.text-center
 											a.req * 
 											label(for='firstName') Name:
 											input#userName.form-control(type='text' placeholder='Enter Name' name='userName' required)
 											p#firstNameError.errorMsg
 
-										.form-group
+										.form-group.text-center
 											a.req * 
 											label(for='lastName') Surname:
 											input#userSurname.form-control(type='text' placeholder='Enter Surname' name='userSurname' required)
 											p#lastNameError.errorMsg
 
-									.form-group
+									.form-group.text-center
 										a.req * 
 										label(for='email') Email:
 										input#userEmail.form-control(type='email' placeholder='Enter Email' name='userEmail' required)
 										p#emailError.errorMsg
 
-									.form-group
-										.form-group
+									.form-group.text-center
+										.form-group.text-center
 											a.req * 
 											label(for='password') Password:
-											input#userPass.form-control(type='password' placeholder='Enter Password' name='userPass' required)
-											p#passError.errorMsg
 											small#passwordHelpBlock.form-text.text-muted
 												| Your password must be 8 characters long and contain only letters and numbers.
+											input#userPass.form-control(type='password' placeholder='Enter Password' name='userPass' required)
+											p#passError.errorMsg
 
-										.form-group
+										.form-group.text-center
 											a.req * 
 											label(for='confirmPassword') Confirm Password:
 											input#userConfPass.form-control(type='password' placeholder='Confirm Password' name='userConfPass' required)
@@ -68,7 +70,7 @@ html
 										br 
 										a.links(href='/user/login') CLICK HERE TO LOGIN PLEASE
 									br
-									button#submit.btn.btn-success.btn-block.btn-lg.enableOnInput(type='button', value='Register', onclick='registerPost()', disabled='disabled') Register
+									button#submit.btn.btn-info.btn-block.btn-lg.enableOnInput(type='button', value='Register', onclick='registerPost()', disabled='disabled') Register
 								p#error.mt-3
 
 		include footer

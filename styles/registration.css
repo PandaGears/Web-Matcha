@@ -1,32 +1,43 @@
 input[type=text],
 input[type=password],
 input[type=email] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 8px 0;
-    color: black;
-    background: #edf0f2;
+    width: 50%;
+    padding: 10px;
+    margin: 0 auto;
+    color: #8b8b8b !important;
+    background: #4c5055 !important;
+    border: none;
+}
+
+input[type=text] :active,
+input[type=password] :active,
+input[type=email] :active {
+    width: 50%;
+    padding: 10px;
+    margin: 0 auto;
+    color: #8b8b8b !important;
+    background: #4c5055 !important;
+    border: none;
 }
 
 .req {
-    color: red !important;
+    color: rgb(255, 255, 255) !important;
     cursor: context-menu;
 }
 
 .links {
-    color: red;
     text-decoration: none;
     font-weight: bold;
 }
 
 .links:hover {
-    color: rgb(187, 0, 0);
     text-decoration: none;
     font-weight: bold;
 }
 
 .errorMsg {
     color: red;
+    font-weight: bold;
 }
 
 label {

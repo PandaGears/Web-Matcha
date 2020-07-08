@@ -4,7 +4,7 @@ const app = express();
 const database = require('../../api/backend/database');
 const mysql = require('mysql');
 const validation = require('../../scripts/formValidation.js');
-const email_handler = require('../email');
+const emailinator = require('../email');
 const encrypt = require('../encrypt');
 
 app.set('view engine', 'pug');
@@ -51,7 +51,7 @@ router.post('/login', (req, res, next) => {
     var res2 = res;
     var req2 = req;
 
-    if (validation.loginFormValid(req.body.userLogin, req.body.userPass)) {
+    if (validation.loginValidifierinator(req.body.userLogin, req.body.userPass)) {
         let db = new database;
 
         let loginAttempt = db.login(req.body.userLogin, req.body.userPass);
@@ -84,7 +84,7 @@ router.get('/register/:error?', (req, res, next) => {
 
 router.post('/register', (req, res, next) => {
     let db = new database;
-    if (validation.registrationFormValid(req.body.userLogin, req.body.userName, req.body.userSurname, req.body.userEmail, req.body.userPass, req.body.userConfPass) != true) {} else {
+    if (validation.Validifierinator(req.body.userLogin, req.body.userName, req.body.userSurname, req.body.userEmail, req.body.userPass, req.body.userConfPass) != true) {} else {
         var registerAttempt = db.register(req.body.userLogin, req.body.userName, req.body.userSurname, req.body.userEmail, req.body.userPass, req.body.userConfPass);
 
         registerAttempt.then(function(ret) {
@@ -293,7 +293,7 @@ router.post('/forgot_pass', (req, res) => {
         sql = mysql.format(sql, inserts);
         let getUser = DB.query(sql);
         getUser.then(function(data) {
-            email_handler.reset_password(req.body.userEmail, data[0].userCode);
+            emailinator.passResetinator(req.body.userEmail, data[0].userCode);
             res.json('Reset Email Sent');
         }).catch(() => {
             res.json('Email does not exist');

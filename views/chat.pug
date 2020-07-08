@@ -23,12 +23,12 @@ html(charset="utf8mb4")
 								each user in friendList
 									if user.liker === activeChat
 										li.py-2.active(id=user.liker)
-											.d-flex.bd-highlight(onclick="setActive('"+user.liker+"');")
+											.d-flex.bd-highlight(onclick="chatActivinator('"+user.liker+"');")
 												.user_info
 													span.selectedchat(style="color: blue; font-weight: bold") * #{user.liker} *
 									else
 										li.py-2(id=user.liker)
-											.d-flex.bd-highlight(onclick="setActive('"+user.liker+"');")
+											.d-flex.bd-highlight(onclick="chatActivinator('"+user.liker+"');")
 												.user_info
 													span #{user.liker}
 						.card-footer
@@ -50,7 +50,7 @@ html(charset="utf8mb4")
 											
 								input#messageBody.form-control.type_msg(type='textarea' placeholder='Type your message...')
 								.input-group-append
-									a#sendMsg.input-group-text.send_btn(type='button' onclick="sendMessage('"+activeChat+"');")
+									a#sendMsg.input-group-text.send_btn(type='button' onclick="messenger('"+activeChat+"');")
 										| SEND
 
 
