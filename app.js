@@ -28,7 +28,6 @@ app.use(bodyParser.json());
 
 app.set('view engine', 'pug');
 app.use(express.static('styles'));
-app.use(express.static('images'));
 app.use(express.static('scripts'));
 
 app.use('/chat', chatRoutes);
@@ -61,6 +60,14 @@ app.get("/:code?", (req, res) => {
             });
         } else if (req.params.code == 'changed') {
             userNotification = 'changed';
+            res.render('index', {
+                title: 'Home',
+                user: (req.session.user === undefined ? "Username" : req.session.user),
+                notification: userNotification,
+                userLogged: (req.session.user === undefined ? false : true)
+            });
+        } else if (req.params.code == 'postRegistered') {
+            userNotification = 'postRegistered';
             res.render('index', {
                 title: 'Home',
                 user: (req.session.user === undefined ? "Username" : req.session.user),

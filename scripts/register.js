@@ -48,7 +48,7 @@ function registrationHandler(data) {
             imageAlt: 'already used'
         })
     } else {
-        window.location.href = "login/postRegistered";
+        window.location.href = "/postRegistered";
     }
 }
 

@@ -54,7 +54,16 @@ html
 					imageHeight: 400,
 					imageAlt: 'Invalid',
 				})
-
+		else if notification === 'postRegistered'
+			script.
+				swal({
+					title: 'Almost There!',
+					text: `Please confirm your email and then you can login.`,
+					imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594032545/alerts/almost_there_xnnne4.jpg',
+					imageWidth: 400,
+					imageHeight: 400,
+					imageAlt: 'So close',
+				})
 		else if notification === 'emailed'
 			script.
 				swal({
