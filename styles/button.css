@@ -3,3 +3,8 @@
     width: 50% !important;
     margin: auto;
 }
+
+.butt {
+    display: block !important;
+    width: 200px !important;
+}

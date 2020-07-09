@@ -62,11 +62,6 @@ textarea {
     border: none;
 }
 
-.butt {
-    display: block !important;
-    width: 200px !important;
-}
-
 .profile-card {
     background-color: #2e3338 !important;
     color: #8b8b8b !important;

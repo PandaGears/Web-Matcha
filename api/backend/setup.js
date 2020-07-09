@@ -1570,133 +1570,133 @@ var setupTables = function setupTables() {
                         ("riotplentiful","riotplentiful@nomail.co.za", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592472642/Moar%20Profiles/generics/Zachary_Britt_ek8spa.jpg", "$2b$10$m1rtnpvWg.WSXjj3.Z./1uVvcV6rMyRzvtDiOaTrAuBBjvb5Y3XFu", "Zachary", "Britt", 'aro', 'Male', 10, 1, 1, 25, 5, 5, "There was coal in his stocking and he was thrilled.", -33.8951, 18.6294, '2020-01-27 17:34', 'b8bba2baae4c2a08fdff4e223458577d')`);
 
                         DB.query(`INSERT INTO images VALUES
-                        ("ectobiologist","https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010882/john_qjtze9.jpg",  0)`);
+                        ("ectobiologist","https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010882/john_qjtze9.jpg",  1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("tentacletherapist", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010889/rose_pdfy7r.jpg", 0)`);
+                        ("tentacletherapist", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010889/rose_pdfy7r.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("turntechgodhead", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010879/Dave_ymnv58.jpg", 0)`);
+                        ("turntechgodhead", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010879/Dave_ymnv58.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("gardengnostic", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010883/Jade_om8mzw.png", 0)`);
+                        ("gardengnostic", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010883/Jade_om8mzw.png", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("gutsygumshoe", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010886/Jane_vgybi1.png", 0)`);
+                        ("gutsygumshoe", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010886/Jane_vgybi1.png", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("tipsygnostalgic", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010884/roxy_zanwix.png", 0)`);
+                        ("tipsygnostalgic", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010884/roxy_zanwix.png", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("timaeustestified", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010886/Dirk_ydyxgj.png", 0)`);
+                        ("timaeustestified", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010886/Dirk_ydyxgj.png", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("golgothasterror", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010882/Jake_q0kgge.jpg", 0)`);
+                        ("golgothasterror", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010882/Jake_q0kgge.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("uranianumbra", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010878/Calliope_kgxbpj.png", 0)`);
+                        ("uranianumbra", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010878/Calliope_kgxbpj.png", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("undyingumbrage", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010883/Calliborn_lo0qrd.jpg", 0)`);
+                        ("undyingumbrage", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010883/Calliborn_lo0qrd.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("apocalypsearisen", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591353562/Moar%20Profiles/aradia_v2tlo5.png", 0)`);
+                        ("apocalypsearisen", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591353562/Moar%20Profiles/aradia_v2tlo5.png", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("adiostoreador", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010235/Tavros_cdoocb.png", 0)`);
+                        ("adiostoreador", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010235/Tavros_cdoocb.png", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("twinarmageddons", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591353567/Moar%20Profiles/sollux_sq1uf3.png", 0)`);
+                        ("twinarmageddons", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591353567/Moar%20Profiles/sollux_sq1uf3.png", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("carcinogeneticist", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010250/Dave_and_Karkat_watching_movie_v4ijiy.png", 0)`);
+                        ("carcinogeneticist", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010250/Dave_and_Karkat_watching_movie_v4ijiy.png", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("arseniccatnip", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591011549/nepeta_rjea8g.png", 0)`);
+                        ("arseniccatnip", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591011549/nepeta_rjea8g.png", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("grimauxillatrix", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591353567/Moar%20Profiles/kanaya_qhvtlt.png", 0)`);
+                        ("grimauxillatrix", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591353567/Moar%20Profiles/kanaya_qhvtlt.png", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("gallowscallibrator", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591353567/Moar%20Profiles/terezi_jw2agf.png", 0)`);
+                        ("gallowscallibrator", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591353567/Moar%20Profiles/terezi_jw2agf.png", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("arachnidsgrip", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010238/Vris_wegnih.jpg", 0)`);
+                        ("arachnidsgrip", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010238/Vris_wegnih.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("centaurstesticle", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010234/Equius_gnekgy.jpg", 0)`);
+                        ("centaurstesticle", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010234/Equius_gnekgy.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("terminallycapricious", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010234/Gamzee_sprite_pacified_subfhd.png", 0)`);
+                        ("terminallycapricious", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010234/Gamzee_sprite_pacified_subfhd.png", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("caligulasaquarium", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010233/Eridian_hkexsa.jpg", 0)`);
+                        ("caligulasaquarium", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010233/Eridian_hkexsa.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("cuttlefishculler", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010239/feferi_dyfomd.png", 0)`);
+                        ("cuttlefishculler", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010239/feferi_dyfomd.png", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("adamantGriftress", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1594291471/Moar%20Profiles/Vrissy-Lalonde_nocmvp.jpg", 0)`);
+                        ("adamantGriftress", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1594291471/Moar%20Profiles/Vrissy-Lalonde_nocmvp.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("YourFace","https://res.cloudinary.com/ddrrwygt1/image/upload/v1592917291/Moar%20Profiles/generics/Rosena_Calzada_yovgbq.jpg", 0)`);
+                        ("YourFace","https://res.cloudinary.com/ddrrwygt1/image/upload/v1592917291/Moar%20Profiles/generics/Rosena_Calzada_yovgbq.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("IsYourFace","https://res.cloudinary.com/ddrrwygt1/image/upload/v1592917262/Moar%20Profiles/generics/Rudolph_Gouge_xrapcc.jpg", 0)`);
+                        ("IsYourFace","https://res.cloudinary.com/ddrrwygt1/image/upload/v1592917262/Moar%20Profiles/generics/Rudolph_Gouge_xrapcc.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("OkayILied","https://res.cloudinary.com/ddrrwygt1/image/upload/v1592917316/Moar%20Profiles/generics/Clementina_Karter_jfxc8c.jpg", 0)`);
+                        ("OkayILied","https://res.cloudinary.com/ddrrwygt1/image/upload/v1592917316/Moar%20Profiles/generics/Clementina_Karter_jfxc8c.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("NotYourFace","https://res.cloudinary.com/ddrrwygt1/image/upload/v1592917269/Moar%20Profiles/generics/Booker_Siniard_obia44.jpg", 0)`);
+                        ("NotYourFace","https://res.cloudinary.com/ddrrwygt1/image/upload/v1592917269/Moar%20Profiles/generics/Booker_Siniard_obia44.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("throatbillies", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424863/Moar%20Profiles/generics/Bob_Musk_tsg3m1.jpg", 0)`);
+                        ("throatbillies", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424863/Moar%20Profiles/generics/Bob_Musk_tsg3m1.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("wallowarollup", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424906/Moar%20Profiles/generics/David_Rivera_gndn7i.jpg", 0)`);
+                        ("wallowarollup", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424906/Moar%20Profiles/generics/David_Rivera_gndn7i.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("headingshannon", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424853/Moar%20Profiles/generics/Adrian_Welsh_whxsem.jpg", 0)`);
+                        ("headingshannon", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424853/Moar%20Profiles/generics/Adrian_Welsh_whxsem.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("pamphletbuckle", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424918/Moar%20Profiles/generics/Affan_Yates_g9fkzr.jpg", 0)`);
+                        ("pamphletbuckle", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424918/Moar%20Profiles/generics/Affan_Yates_g9fkzr.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("termiteshaxwell", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424864/Moar%20Profiles/generics/Anne_Norris_lvaas2.jpg", 0)`);
+                        ("termiteshaxwell", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424864/Moar%20Profiles/generics/Anne_Norris_lvaas2.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("lomondknaped", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424882/Moar%20Profiles/generics/Carolina_Sainz_v1esfy.jpg", 0)`);
+                        ("lomondknaped", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424882/Moar%20Profiles/generics/Carolina_Sainz_v1esfy.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("controllerbanknotes", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424917/Moar%20Profiles/generics/Natali_Dormer_oxoimb.jpg", 0)`);
+                        ("controllerbanknotes", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424917/Moar%20Profiles/generics/Natali_Dormer_oxoimb.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("lampreymanor", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593425410/Moar%20Profiles/generics/Samantha_Russell_tumb6o.jpg", 0)`);
+                        ("lampreymanor", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593425410/Moar%20Profiles/generics/Samantha_Russell_tumb6o.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("objectivechunks", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424842/Moar%20Profiles/generics/Abigail_Smith_uo9run.jpg", 0)`);
+                        ("objectivechunks", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424842/Moar%20Profiles/generics/Abigail_Smith_uo9run.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("diffusersligh", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424874/Moar%20Profiles/generics/John_Wolf_dmjf8t.jpg", 0)`);
+                        ("diffusersligh", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424874/Moar%20Profiles/generics/John_Wolf_dmjf8t.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("jumbourology", "http://res.cloudinary.com/matchawtc/image/upload/v1579359425/userImages/l3ryh11wsflhjiqlutdg.jpg", 0)`);
+                        ("jumbourology", "http://res.cloudinary.com/matchawtc/image/upload/v1579359425/userImages/l3ryh11wsflhjiqlutdg.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("tubskimpy", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424825/Moar%20Profiles/generics/Mark_Franks_giapsu.jpg", 0)`);
+                        ("tubskimpy", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424825/Moar%20Profiles/generics/Mark_Franks_giapsu.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("mockerspectacles","https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424846/Moar%20Profiles/generics/Peter_Carson_la7uap.jpg", 0)`);
+                        ("mockerspectacles","https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424846/Moar%20Profiles/generics/Peter_Carson_la7uap.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("repeatlondon", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424802/Moar%20Profiles/generics/Fred_Miller_sbmnwl.jpg", 0)`);
+                        ("repeatlondon", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424802/Moar%20Profiles/generics/Fred_Miller_sbmnwl.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("flutweezers", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424834/Moar%20Profiles/generics/Jamelia_Delarosa_spwzsx.jpg", 0)`);
+                        ("flutweezers", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424834/Moar%20Profiles/generics/Jamelia_Delarosa_spwzsx.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("pishrewind", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424847/Moar%20Profiles/generics/Thamid_Bates_luix4e.jpg", 0)`);
+                        ("pishrewind", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424847/Moar%20Profiles/generics/Thamid_Bates_luix4e.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("trumpetdog", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424811/Moar%20Profiles/generics/Alina_Barr_dfjlrd.jpg", 0)`);
+                        ("trumpetdog", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424811/Moar%20Profiles/generics/Alina_Barr_dfjlrd.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("passportidentical", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424784/Moar%20Profiles/generics/Euan_Love_v36hsq.jpg", 0)`);
+                        ("passportidentical", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424784/Moar%20Profiles/generics/Euan_Love_v36hsq.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("kyloren", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424781/Moar%20Profiles/generics/Not_John_Wick_x16hr2.jpg", 0)`);
+                        ("kyloren", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424781/Moar%20Profiles/generics/Not_John_Wick_x16hr2.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("glassmandrill", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424816/Moar%20Profiles/generics/Ritchie_Le_kdj28g.jpg", 0)`);
+                        ("glassmandrill", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424816/Moar%20Profiles/generics/Ritchie_Le_kdj28g.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("anguishedfrin", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424798/Moar%20Profiles/generics/James_Fredericks_yhyvbt.jpg", 0)`);
+                        ("anguishedfrin", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424798/Moar%20Profiles/generics/James_Fredericks_yhyvbt.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("goldiemetrics", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424849/Moar%20Profiles/generics/Patricia_Jade_eue9mb.jpg", 0)`);
+                        ("goldiemetrics", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424849/Moar%20Profiles/generics/Patricia_Jade_eue9mb.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("sandsendtope", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424799/Moar%20Profiles/generics/Sally_Johnson_kvn2zq.jpg", 0)`);
+                        ("sandsendtope", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1593424799/Moar%20Profiles/generics/Sally_Johnson_kvn2zq.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("Add432", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592472709/Moar%20Profiles/generics/Adelaide_Baynard_icjpmc.jpg",0)`);
+                        ("Add432", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592472709/Moar%20Profiles/generics/Adelaide_Baynard_icjpmc.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("Adel", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469108/Moar%20Profiles/generics/Adelle_Sitton_hnffzf.jpg",0)`);
+                        ("Adel", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469108/Moar%20Profiles/generics/Adelle_Sitton_hnffzf.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("AWoodhouse", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592476640/Moar%20Profiles/generics/Ahmed_Woodhouse_ycyqim.jpg",0)`);
+                        ("AWoodhouse", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592476640/Moar%20Profiles/generics/Ahmed_Woodhouse_ycyqim.jpg",1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("ARisch", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469251/Moar%20Profiles/generics/Ailene_Risch_zu2xjf.jpg",0)`);
+                        ("ARisch", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469251/Moar%20Profiles/generics/Ailene_Risch_zu2xjf.jpg", 1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("AOlson", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469292/Moar%20Profiles/generics/Alaine_Olson_fa6zru.jpg",0)`);
+                        ("AOlson", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469292/Moar%20Profiles/generics/Alaine_Olson_fa6zru.jpg",1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("AGleason", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469169/Moar%20Profiles/generics/Aldo_Gleason_sint3x.jpg",0)`);
+                        ("AGleason", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469169/Moar%20Profiles/generics/Aldo_Gleason_sint3x.jpg",1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("AKalinowski", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469124/Moar%20Profiles/generics/Aleshia_Kalinowski_dvloei.jpg",0)`);
+                        ("AKalinowski", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469124/Moar%20Profiles/generics/Aleshia_Kalinowski_dvloei.jpg",1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("ALauderdale", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469179/Moar%20Profiles/generics/Allen_Lauderdale_xhu0yo.jpg",0)`);
+                        ("ALauderdale", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469179/Moar%20Profiles/generics/Allen_Lauderdale_xhu0yo.jpg",1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("AGerry", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469164/Moar%20Profiles/generics/Alphonse_Gerry_tsdp39.jpg",0)`);
+                        ("AGerry", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469164/Moar%20Profiles/generics/Alphonse_Gerry_tsdp39.jpg",1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("ASyring", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469170/Moar%20Profiles/generics/Alvera_Syring_swqw.jpg",0)`);
+                        ("ASyring", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469170/Moar%20Profiles/generics/Alvera_Syring_swqw.jpg",1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("AHackworth", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469199/Moar%20Profiles/generics/Amee_Hackworth_sdn4ug.jpg",0)`);
+                        ("AHackworth", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469199/Moar%20Profiles/generics/Amee_Hackworth_sdn4ug.jpg",1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("AMoreland", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469194/Moar%20Profiles/generics/Amira_Moreland_o3fmf6.jpg",0)`);
+                        ("AMoreland", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469194/Moar%20Profiles/generics/Amira_Moreland_o3fmf6.jpg",1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("AMantilla", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469234/Moar%20Profiles/generics/Angila_Mantilla_hevgja.jpg",0)`);
+                        ("AMantilla", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469234/Moar%20Profiles/generics/Angila_Mantilla_hevgja.jpg",1)`);
                         DB.query(`INSERT INTO images VALUES
-                        ("ABrandstetter", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469208/Moar%20Profiles/generics/Anika_Brandstetter_fq4bvf.jpg",0)`);
+                        ("ABrandstetter", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469208/Moar%20Profiles/generics/Anika_Brandstetter_fq4bvf.jpg",1)`);
                         DB.query(`INSERT INTO images VALUES
                         ("ALafontant", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592469244/Moar%20Profiles/generics/Anita_Lafontant_p2puyk.jpg",0)`);
                         DB.query(`INSERT INTO images VALUES

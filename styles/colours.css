@@ -134,6 +134,21 @@ a.logreg:hover {
     color: rgb(174, 0, 255);
 }
 
+.badge-danger .badge-danger :hover {
+    color: #fff;
+    background-color: #dc3545 !important;
+}
+
+@media screen and (max-width: 575.98px) {
+    #heading {
+        font-size: 2.5rem;
+    }
+    #notifys {
+        bottom: 43px;
+        right: 15px;
+    }
+}
+
 .btn-success {
     color: #fff !important;
     background-color: #28a745 !important;
@@ -157,21 +172,6 @@ a.logreg:hover {
     color: rgb(255, 255, 255) !important;
     background-color: #00a2ff !important;
     border-color: #00a2ff !important;
-}
-
-.badge-danger .badge-danger :hover {
-    color: #fff;
-    background-color: #dc3545 !important;
-}
-
-@media screen and (max-width: 575.98px) {
-    #heading {
-        font-size: 2.5rem;
-    }
-    #notifys {
-        bottom: 43px;
-        right: 15px;
-    }
 }
 
 @media screen and (min-width: 576px) and (max-width: 991.98px) {

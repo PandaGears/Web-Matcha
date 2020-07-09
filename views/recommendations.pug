@@ -6,10 +6,10 @@ html
 		include navbar.pug
 		.container.text-center
 			h1.mt-white.text-center.mt-5.display-3#heading Search
+			br
 									
-									//the filter
 		.container.my-3.mx-auto(style="max-width:750px")
-			button#SortFilter.btn.btn-info.btn-block.w-40(type='button', data-toggle="collapse", data-target=".multi-collapse", aria-expanded="false", aria-controls="Filter Sort") Sort/Filter
+			button#SortFilter.btn.btn-info.mx-auto.butt.btn-lg.w-40(type='button', data-toggle="collapse", data-target=".multi-collapse", aria-expanded="false", aria-controls="Filter Sort") Sort/Filter
 			.row
 				.col-sm-11.py-2.mx-auto
 					#Sort.collapse.multi-collapse
@@ -65,8 +65,8 @@ html
 								small#interestHelpBlock.form-text.text-muted(style="color: white !important")
 									| Only one interest. Example: #food
 						br
-						button#Submit.btn.btn-success.btn-block.btn-lg(type='button', onclick='sendParams();', name='filterSort') Apply
-									//end of filter
+						button#Submit.btn.btn-success.mx-auto.butt.btn-lg(type='button', onclick='sendParams();', name='filterSort') Apply
+						
 
 			.container(style="max-width:750px")
 				.grid
