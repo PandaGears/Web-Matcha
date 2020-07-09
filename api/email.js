@@ -35,7 +35,7 @@ var emailValidifinator = function emailValidifinator(email, code) {
             from: 'noreply.matchastuffs@gmail.com',
             to: `${email}`,
             subject: 'Please verify your email',
-            html: `<p>Greetings cub-to-be</p>verify here please...</br> <p><b>VERIFY IT!!!:</b></p></br> <a href="" style="color: red; font-size: 18px; text-decoration: none; font weight: bold">I AM THE VERIFICATION LINK</a>`
+            html: `<p>Greetings cub-to-be</p>verify here please...</br> <p><b>VERIFY IT!!!:</b></p></br> <a href="http://localhost:8080/${code}" style="color: red; font-size: 18px; text-decoration: none; font weight: bold">I AM THE VERIFICATION LINK</a>`
         };
 
         transporter.sendMail(mailOptions, function(error, info) {

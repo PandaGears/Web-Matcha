@@ -9,7 +9,7 @@ html
 
 		.container
 			h1.mt-white.text-center.mt-5.display-3#heading Edit the Profile of #{username}
-
+			br
 		.container.mx-auto.my-3(style='max-width: 1200px;')
 			.card.mx-auto.profile-card(style='max-width: 1200px;')
 				if imageExists
@@ -17,7 +17,7 @@ html
 				else
 					img.img-fluid.w-100(src='https://res.cloudinary.com/ddrrwygt1/image/upload/v1591020994/images_rxeryf.png', alt='No Image Available')
 				br
-				a#UpdateImg.btn.btn-info.btn-block.btn-lg.butt(href='/user/images') Change Image(s)
+				a#UpdateImg.btn.btn-info.btn-lg.mx-auto.butt(href='/user/images') Change Image(s)
 
 				.card-body.profile-card
 					h4.card-title.text-center Public Details
@@ -113,23 +113,23 @@ html
 									option(value='hetero') Heterosexual
 							else
 								select#userSexPref.custom-select(name='sexPref' style="width: 300px")
-									option(value='pan') Pansexual
 									option(value='bi') Bisexual
+									option(value='pan') Pansexual
 									option(value='homo') Homosexual
 									option(value='hetero') Heterosexual
 									option(value="aro") Aromantic
 									option(value="ace") Asexual
 						hr
 						h4.profile-card.card-title.text-center Bio
-						textarea#userBio(placeholder='Biography' name='userBio' form="account" rows='3').form-control= userBio
+						textarea#userBio(placeholder='Biography' name='userBio' form="account" rows='2').form-control= userBio
 
 						hr
 						p.h5.text-center Your current list of interests:
 						each val in userInterests
-							span.badge.badge-primary.mx-1(style="font-size: 2vw") #{val.interest}
+							span.badge.badge-primary.mx-auto(style="font-size: 14px") #{val.interest}
 						hr
 
-						button#UpdateAcc.btn.btn-info.btn-block.btn-lg.butt(type='button', onclick='postPublicDetails()', value='account') Update Profile
+						button#UpdateAcc.btn.btn-info.mx-auto.btn-lg.butt(type='button', onclick='postPublicDetails()', value='account') Update Profile
 						p#deetsPara.text-success.pl-3
 
 		if !age
@@ -139,7 +139,8 @@ html
 						h4.card-title Date of Birth
 						hr
 						input#userDOB.form-control(type="date" name="DOB")
-						button#UpdateDOB.butt.btn.btn-info.btn-block.btn-block.btn-lg(type='button', onclick='updateDoB()', value='dob') Set Date of Birth
+						br
+						button#UpdateDOB.butt.btn.btn-info.mx-auto.btn-lg(type='button', onclick='updateDoB()', value='dob') Set Date of Birth
 						p#dobPara.text-success.pl-3
 
 		.container.mx-auto.my-3(style='max-width: 1200px;')
@@ -161,7 +162,7 @@ html
 					form#addInterests(name="interests", action='', method='POST' novalidate, onsubmit='return false')
 						input#userInterests.form-control(type='text' placeholder='Interests' name='userInterests' style="width: 300px")
 						br
-						button#AddInterest.btn.btn-info.btn-block.btn-lg.butt(type='button', onclick='gaininterest()' value='interests') Add Interest(s)
+						button#AddInterest.btn.btn-info.mx-auto.btn-lg.butt(type='button', onclick='gaininterest()' value='interests') Add Interest(s)
 					p#interestAError
 					p#interestsPara.text-success.pl-3
 
@@ -175,7 +176,7 @@ html
 					form#removeInterests(name="interests", action='', method='POST' novalidate, onsubmit='return false')
 						input#removedInterests.form-control(type='text' placeholder='Interests' name='userInterests' style="width: 300px")
 						br
-						button#RemoveInterest.btn.btn-info.btn-block.btn-lg.butt(type='button', onclick='loseinterest()' value='interests') Remove Interest(s)
+						button#RemoveInterest.btn.btn-info.mx-auto.btn-lg.butt(type='button', onclick='loseinterest()' value='interests') Remove Interest(s)
 					p#interestRError
 					p#interestsRemovedPara.text-success.pl-3
 
@@ -188,7 +189,7 @@ html
 					br
 					input#userLogin.form-control(type='text' placeholder='Username' name='userLogin' value=username style="width: 300px")
 					br
-					button#updateUsername.btn.btn-info.btn-block.btn-lg.butt(type='button', onclick='changeUsername()', value='username') Update Username
+					button#updateUsername.btn.btn-info.mx-auto.btn-lg.butt(type='button', onclick='changeUsername()', value='username') Update Username
 					p#unamePara.text-success.pl-3
 
 		.container.mx-auto.my-3(style='max-width: 1200px;')
@@ -200,7 +201,7 @@ html
 					br
 					input#Email.form-control(type='email' placeholder='Email' name='Email' value=Email style="width: 300px")
 					br
-					button#updateEmail.btn.btn-info.btn-block.btn-lg.butt(type='button', onclick='changeEmail()', value='email') Update Email
+					button#updateEmail.btn.btn-info.mx-auto.btn-lg.butt(type='button', onclick='changeEmail()', value='email') Update Email
 					p#emailPara.text-success.pl-3
 
 		.container.mx-auto.my-3(style='max-width: 1200px;')
@@ -213,7 +214,7 @@ html
 					label(for='pass') New Password
 					input#userNewPass.form-control(type='password' placeholder='New Password' name='userNewPass' style="width: 300px")
 					br
-					button#updatePassword.btn.btn-info.btn-block.btn-lg.butt(type='button', onclick='changePassword()', name='password', disabled='true') Update Password
+					button#updatePassword.btn.btn-info.mx-auto.btn-lg.butt(type='button', onclick='changePassword()', name='password', disabled='true') Update Password
 					p#pwPara.text-success.pl-3
 					p#pwParaE.text-danger.pl-3
 			

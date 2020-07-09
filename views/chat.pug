@@ -25,7 +25,7 @@ html(charset="utf8mb4")
 										li.py-2.active(id=user.liker)
 											.d-flex.bd-highlight(onclick="chatActivinator('"+user.liker+"');")
 												.user_info
-													span.selectedchat.text-center(style="color: blue; font-weight: bold") * #{user.liker} *
+													span.selectedchat.text-center * #{user.liker} *
 									else
 										li.py-2(id=user.liker)
 											.d-flex.bd-highlight(onclick="chatActivinator('"+user.liker+"');")
@@ -38,9 +38,9 @@ html(charset="utf8mb4")
 							.d-flex.bd-highlight
 								.user_info
 									if !activeChat
-										span#ChatWith.text-center(style="color: black") Select a Chat first:
+										span#ChatWith.text-center Select a Chat first:
 									else
-										span#ChatWith.text-center(style="color: black") Conversation with #{activeChat}
+										span#ChatWith.text-center Conversation with #{activeChat}
 									
 						.card-body.msg_card_body#populateme
 									

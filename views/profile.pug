@@ -105,16 +105,9 @@ html
 									| Non-Binary
 								else
 									|	#{userGender}
-						else if userOrientation === 'bi'
+						else if userOrientation === 'aro'
 							p(style="text-align: center")
-								| Bisexual 								
-								if userGender === 'NB'
-									| Non-Binary
-								else
-									|	#{userGender}
-						else if userOrientation === 'pan'
-							p(style="text-align: center")
-								| Pansexual 
+								| Aromantic								
 								if userGender === 'NB'
 									| Non-Binary
 								else
@@ -126,9 +119,16 @@ html
 									| Non-Binary
 								else
 									|	#{userGender}
+						else if userOrientation === 'pan'
+							p(style="text-align: center")
+								| Pansexual 
+								if userGender === 'NB'
+									| Non-Binary
+								else
+									|	#{userGender}
 						else
 							p(style="text-align: center")
-								| Aromantic 
+								| Bisexual 
 								if userGender === 'NB'
 									| Non-Binary
 								else
@@ -198,7 +198,7 @@ html
 							p(style="text-align: center") This user currently has no Interests set!
 						else
 							each val in userInterests
-								span.badge.badge-primary(style="margin-left: 46%; font-size: 18px") #{val.interest}
+								span.badge.badge-primary.mx-auto.butt(style="font-size: 12px") #{val.interest}
 						hr
 
 					h4.card-title(style="text-align: center") Bio

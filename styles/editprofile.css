@@ -1,7 +1,8 @@
 input[type=text],
 input[type=password],
 input[type=email],
-input[type=file] {
+input[type=file],
+input[type=date] {
     width: 50%;
     padding: 10px;
     margin: 0 auto;
@@ -62,6 +63,7 @@ textarea {
 }
 
 .butt {
+    display: block !important;
     width: 200px !important;
 }
 

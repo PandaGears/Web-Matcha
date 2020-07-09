@@ -136,6 +136,9 @@ var setupTables = function setupTables() {
                         ("cuttlefishculler","cuttlefishculler@nomail.co.za", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010239/Moar%20Profiles/feferi_dyfomd.png", "$2b$10$bMG3yMTNIzvWzNC8zgiwkOOjGYjB0hVbBW5ec0F00z.mtR.r/Up8m", "Feferi", "Peixes", 'hetero', 'Female', 17, 1, 1, 19, 3, 14, "Glub glub glub glub glub glub glub! I AM -EXCIT-ED!", -33.9413, 18.4128, '2020-09-13 23:40', 'f2ce2daa60191398521de69ad5610409')`);
                         DB.query(`INSERT INTO users
                         (username, userEmail, userImage, userPassword, userFirstName, userLastName, userOrientation, userGender, Likes, userVerified, accountComplete, userAge, userDislikes, popularity, userBiography, userLocationlat, userLocationlng, lastOnline, userCode) VALUES
+                        ("adamantGriftress","adamantGriftress@nomail.co.za", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1594291471/Moar%20Profiles/Vrissy-Lalonde_nocmvp.jpg", "$2b$10$bMG3yMTNIzvWzNC8zgiwkOOjGYjB0hVbBW5ec0F00z.mtR.r/Up8m", "Vrissy", "Maryam-Lalonde", 'bi', 'Female', 17, 1, 1, 16, 3, 14, "Listen Tavros, Vriska will get 8ored of Harry in a Heart8eat! That's the whole point!!!!!!!! She shouldn't 8e w8sting her Time on someone like Him! SHE SHOULD BE T8LKING T8 ME!!!!!!!!", -33.9413, 18.4128, '2020-09-13 23:40', 'f2ce2daa60191398521de69ad5610409')`);
+                        DB.query(`INSERT INTO users
+                        (username, userEmail, userImage, userPassword, userFirstName, userLastName, userOrientation, userGender, Likes, userVerified, accountComplete, userAge, userDislikes, popularity, userBiography, userLocationlat, userLocationlng, lastOnline, userCode) VALUES
                         ("YourFace","yourface@nomail.co.za", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1592917291/Moar%20Profiles/generics/Rosena_Calzada_yovgbq.jpg", "$2b$10$m1rtnpvWg.WSXjj3.Z./1uVvcV6rMyRzvtDiOaTrAuBBjvb5Y3XFu", "Rosena", "Calzada", 'hetero', 'Female', 5, 1, 1, 22, 0, 5, "That's a clown question, bro. - Bryce Harper", -33.9353, 18.4083, '2020-03-05 13:37', 'bf779e0933a882808585d19425cd7937')`);
                         DB.query(`INSERT INTO users
                         (username, userEmail, userImage, userPassword, userFirstName, userLastName, userOrientation, userGender, Likes, userVerified, accountComplete, userAge, userDislikes, popularity, userBiography, userLocationlat, userLocationlng, lastOnline, userCode) VALUES
@@ -1610,6 +1613,8 @@ var setupTables = function setupTables() {
                         ("caligulasaquarium", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010233/Eridian_hkexsa.jpg", 0)`);
                         DB.query(`INSERT INTO images VALUES
                         ("cuttlefishculler", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1591010239/feferi_dyfomd.png", 0)`);
+                        DB.query(`INSERT INTO images VALUES
+                        ("adamantGriftress", "https://res.cloudinary.com/ddrrwygt1/image/upload/v1594291471/Moar%20Profiles/Vrissy-Lalonde_nocmvp.jpg", 0)`);
                         DB.query(`INSERT INTO images VALUES
                         ("YourFace","https://res.cloudinary.com/ddrrwygt1/image/upload/v1592917291/Moar%20Profiles/generics/Rosena_Calzada_yovgbq.jpg", 0)`);
                         DB.query(`INSERT INTO images VALUES

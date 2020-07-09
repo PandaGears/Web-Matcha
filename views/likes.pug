@@ -25,20 +25,9 @@ html
 								p
 									i.fa.fa-user-o.mx-2.text-secondary
 									a.toast-link(href='/user/profile/'+val.liker) #{val.liker}
-									|  disliked your profile, feels bad man
-									i.fa.fa-heart-broken.red
+									|  disliked your profile, feels bad man...
+									i.fa.fa-heart-broken
 
 	include footer
 	
 	include global_scripts
-
-			if notification === 'postRegistered'
-			script.
-				swal({
-					title: 'Almost There!',
-					text: `Please confirm email and then login.`,
-					imageUrl: 'https://res.cloudinary.com/ddrrwygt1/image/upload/v1594032545/alerts/almost_there_xnnne4.jpg',
-					imageWidth: 400,
-					imageHeight: 400,
-					imageAlt: 'So close',
-				})
