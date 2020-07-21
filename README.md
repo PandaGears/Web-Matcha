@@ -72,18 +72,19 @@ Another dating site
 		* backend
 			* This folder has the configuration functions to make the database and the 
 				stored procedures to run the sql related functions (i.e creating/updating/selecting users)
-				* config.js (creates variables for the sql functions, if your phpmyadmin password is different, 					change the dbpassword to your version od the password)
-				* database.js (calls the stored procedures and functions for the base necessities of the site (shows 					recommended users,filtered interests logins and registration etc))
-				* setup.js (creates the database and appropriate tables and columns if it wasn't made already... 					only enter if you)
+				* config.js (creates variables for the sql functions, if your phpmyadmin password is different, 
+				change the dbpassword to your version od the password)
+				* database.js (calls the stored procedures and functions for the base necessities of the site (shows
+				recommended users,filtered interests logins and registration etc))
+				* setup.js (creates the database and appropriate tables and columns if it wasn't made already...)
 		* PageViews
-			* This folder has the .js that act as router functions for rendering pug files and some backend 					functionality, database storage included
+			* This folder has the .js that act as router functions for rendering pug files and some backend functionality, database storage included
 			 * account.js (renders the page and appropriate route to edit your profile and images)
 			 * chat.js (renders the page and appropriate route to chat with matched users)
 			 * location.js (renders the page for mapping location, also stores the location afterwards)
 			 * notification.js (renders the likes and views pages for seeing who liked you or viewed you)
 			 * recommend.js (renders the user finding page and maths out the total distance between users)
-			 * search.js (renders the page for searching users... well... I should delete that, I dont use it)
-			 * users.js (renders the pages for login, registrations, profiles, password resets and database functions 				for the profile actions)
+			 * users.js (renders the pages for login, registrations, profiles, password resets and database functions for the profile actions)
 		* email.js	
 			* This file is for the emailer functions
 		* encrypt.js
