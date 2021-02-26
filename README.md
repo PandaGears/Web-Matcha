@@ -37,6 +37,7 @@ Another dating site
 	* Javascript
 	* node.js
 	* express
+	
 * dependancies
 	* bcrypt
 	* bluebird
@@ -44,9 +45,11 @@ Another dating site
 	* express-session
 	* nodemon
 	* sweetalerts
+	
 * Database Management
 	* MySQL
 	* phpMyAdmin
+	
 * App folder structure
 	* views
 		* This folder has all the .pug files that act as pages for the site
@@ -62,7 +65,7 @@ Another dating site
 			* login.js (functions for logging in)
 			* logout.js (functions for logging out)
 			* navbar.js (function to animate a dropdown)
-			* notifications.js (functions to receive appropriate notifications based on if your profile was viewed, 				liked or if you got a message)
+			* notifications.js (functions to receive appropriate notifications based on if your profile was viewed, liked or if you got a message)
 			* profileActions.js (functions for profile viewing, liking, blocking and reporting)
 			* pw.js (functions for resetting the password if forgotten)
 			* recommendations.js (functions for searching for other users)
@@ -89,6 +92,15 @@ Another dating site
 			* This file is for the emailer functions
 		* encrypt.js
 			* This file is used to encrypt the user passwords
+			
+		Images:
+			![Landing Page](https://res.cloudinary.com/ddrrwygt1/image/upload/v1614321558/examples/Screenshot_50_u3lwdq.png)
+			![Login Page](https://res.cloudinary.com/ddrrwygt1/image/upload/v1614321549/examples/Screenshot_28_uh9bte.png)
+			![Profile Page](https://res.cloudinary.com/ddrrwygt1/image/upload/v1614322125/examples/Screenshot_60_ygj7lf.png)
+			![Profile Edit](https://res.cloudinary.com/ddrrwygt1/image/upload/v1614322125/examples/Screenshot_60_ygj7lf.png)
+			![Search Filter](https://res.cloudinary.com/ddrrwygt1/image/upload/v1614321885/examples/Screenshot_56_xgnypm.png)
+			![Search Page](https://res.cloudinary.com/ddrrwygt1/image/upload/v1614321885/examples/Screenshot_57_lww0fd.png)
+			![Chat](https://res.cloudinary.com/ddrrwygt1/image/upload/v1614321555/examples/Screenshot_53_cbrxjd.png)
 			
 # Testing reasons:
 
