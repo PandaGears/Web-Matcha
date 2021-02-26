@@ -94,6 +94,7 @@ Another dating site
 			* This file is used to encrypt the user passwords
 			
 		Images:
+		
 			Landing Page
 			![Landing Page](https://res.cloudinary.com/ddrrwygt1/image/upload/v1614321558/examples/Screenshot_50_u3lwdq.png)
 			Login Page
