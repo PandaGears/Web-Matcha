@@ -26,7 +26,7 @@
         "multer-storage-cloudinary": "^2.2.1",
         "mysql": "^2.18.1",
         "mysql-pool": "^0.2.2",
-        "nodemailer": "^6.4.2",
+        "nodemailer": "^6.4.16",
         "nouislider": "^14.1.0",
         "pug": "^2.0.4",
         "pug-cli": "^1.0.0-alpha6",
